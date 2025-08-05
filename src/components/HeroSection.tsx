@@ -75,18 +75,19 @@ const HeroSection = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{animationDelay: '0.6s'}}>
-          <Button 
+          {/* <Button 
             size="lg" 
             className="premium-gradient text-white font-semibold px-8 py-4 text-lg hover-lift"
           >
             <Phone className="mr-2 h-5 w-5" />
             Call Now: +91 XXXXXXXXXX
-          </Button>
+          </Button> */}
           
           <Button 
             size="lg" 
-            variant="outline" 
-            className="border-white text-black hover:bg-white hover:text-primary px-8 py-4 text-lg hover-lift"
+            variant="outline"
+            className="border-white text-black hover:bg-white hover:text-primary px-8 py-4 text-lg hover-lift" 
+            // className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg hover-lift"
           >
             <MessageCircle className="mr-2 h-5 w-5" />
             WhatsApp Us

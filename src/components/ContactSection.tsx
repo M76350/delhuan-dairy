@@ -202,13 +202,14 @@ const ContactSection = () => {
                 </p>
               </CardHeader>
               <CardContent className="p-0">
-                <div className="w-full h-64 bg-muted rounded-b-lg flex items-center justify-center">
+                {/* <div className="w-full h-64 bg-muted rounded-b-lg flex items-center justify-center">
                   <div className="text-center text-muted-foreground">
                     <MapPin className="h-12 w-12 mx-auto mb-2" />
                     <p>Interactive Map</p>
                     <p className="text-sm">Delhuan Village, Dinara Thana, Bihar</p>
                   </div>
-                </div>
+                </div> */}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1970.7821920319245!2d83.99330449225273!3d25.264776949103762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d93dd6dd8bc41%3A0x6e9a1435ee05428d!2sSudha%20milk%20callection%20center!5e0!3m2!1sen!2sin!4v1754398175795!5m2!1sen!2sin" width="100%" height="450"  loading="lazy" ></iframe>
               </CardContent>
             </Card>
           </div>
@@ -219,15 +220,15 @@ const ContactSection = () => {
           <h3 className="text-2xl font-poppins font-bold text-primary mb-6">
             Need Immediate Assistance?
           </h3>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="premium-gradient text-white px-8">
+          <div className="flex flex-col items-center  sm:flex-row gap-4 justify-center">
+            <a  href="tel:+917635065908" className="premium-gradient text-white px-8 flex gap-2 p-3 rounded-md">
               <Phone className="mr-2 h-5 w-5" />
-              Call Now: +91 XXXXXXXXXX
-            </Button>
-            <Button size="lg" className="accent-gradient text-black px-8">
+              Call Now: +91 7635065908
+            </a>
+            <a  href="https://wa.me/917635065908" className=" flex gap-2 accent-gradient text-black px-8 p-3 rounded-md">
               <MessageCircle className="mr-2 h-5 w-5" />
               WhatsApp Support
-            </Button>
+            </a>
           </div>
         </div>
       </div>
