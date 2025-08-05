@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
+# Delhuan Dairy Website
+ websute:  https://delhuan-dairy.netlify.app/
+## 🐄 Overview
+Delhuan Dairy is a modern and responsive website designed for a rural dairy farm. It provides information about the dairy, its services, and connects local villagers with the dairy digitally. The platform is built with **React, TypeScript, and Tailwind CSS** for speed and scalability.
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/1cebb3f0-82fa-406a-9c4a-4d89a0e17e52
+## ✅ Features
+- Responsive design for all devices
+- Interactive homepage with banner and slider
+- Contact options: **Call** & **WhatsApp** buttons
+- Google Maps integration for easy navigation
+- Gallery section for farm images
+- Secure login functionality
+- Social media links for better connectivity
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🛠 Tech Stack
+- **React (with Vite)**
+- **TypeScript**
+- **Tailwind CSS**
+- **shadcn-ui Components**
+- **Netlify for Deployment**
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1cebb3f0-82fa-406a-9c4a-4d89a0e17e52) and start prompting.
+## 🚀 Installation & Setup
+Follow these steps to run the project locally:
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+# 1. Clone the repository
+git clone <YOUR_REPO_URL>
 
-**Use your preferred IDE**
+# 2. Navigate to the project directory
+cd delhuan-dairy
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# 3. Install dependencies
+npm install
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Start the development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🌐 Live Demo
+The project is live at:
+https://delhuan-dairy.netlify.app/
 
-## What technologies are used for this project?
+📸 Screenshots
+Add screenshots of your homepage and features here:
 
-This project is built with:
+bash
+Copy
+Edit
+/screenshots/homepage.png
+/screenshots/gallery.png
+📦 Deployment
+This project is deployed on Netlify.
+To deploy your own version:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Push your code to GitHub.
 
-## How can I deploy this project?
+Connect your repository to Netlify.
 
-Simply open [Lovable](https://lovable.dev/projects/1cebb3f0-82fa-406a-9c4a-4d89a0e17e52) and click on Share -> Publish.
+Set the build command: npm run build and publish directory: dist.
 
-## Can I connect a custom domain to my Lovable project?
+📜 License
+This project is licensed under the MIT License.
 
-Yes, you can!
+👤 Contact
+Manish Kumar
+📧 Email: [your-email@example.com]
+📱 WhatsApp: [+91 7635065908]
+🌐 Website: https://delhuan-dairy.netlify.app/
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+yaml
+Copy
+Edit
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+🔥 This README is **clean, professional, and focused on your dairy website**. No mention of Lovable or any other platform.  
+
+---
+
+✅ Do you want me to **add professional badges** (e.g., Netlify deploy status, React version, License, etc.)  
+✅ Or also **create a screenshot layout** (with placeholders ready for images)?  
+✅ Or **prepare the README in a ready-to-download file** for you?  
+Which one should I do next?
