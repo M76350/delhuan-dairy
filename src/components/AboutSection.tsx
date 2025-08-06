@@ -1,8 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Users, Award, Shield, Zap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const AboutSection = () => {
+  const [farmers, setFarmers] = useState(0);
+  const [collection, setCollection] = useState(0);
+  const [quality, setQuality] = useState(0);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  const animateCount = (start: number, end: number, setter: (value: number) => void, duration: number = 2000) => {
+    const startTime = Date.now();
+    const updateCount = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentValue = Math.floor(start + (end - start) * progress);
+      setter(currentValue);
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCount);
+      }
+    };
+    updateCount();
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          animateCount(0, 500, setFarmers);
+          animateCount(0, 5000, setCollection);
+          animateCount(0, 100, setQuality);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
   const features = [
     {
       icon: Users,
@@ -101,21 +142,21 @@ const AboutSection = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div className="bg-card rounded-lg p-6 shadow-sm">
-            <div className="text-3xl font-bold text-primary mb-2">500+</div>
+        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="bg-card rounded-lg p-6 shadow-sm hover-lift">
+            <div className="text-3xl font-bold text-primary mb-2">{farmers}+</div>
             <p className="text-muted-foreground">Farmers Served</p>
           </div>
-          <div className="bg-card rounded-lg p-6 shadow-sm">
-            <div className="text-3xl font-bold text-accent-dark mb-2">5000L</div>
+          <div className="bg-card rounded-lg p-6 shadow-sm hover-lift">
+            <div className="text-3xl font-bold text-accent-dark mb-2">{collection}L</div>
             <p className="text-muted-foreground">Daily Collection</p>
           </div>
-          <div className="bg-card rounded-lg p-6 shadow-sm">
+          <div className="bg-card rounded-lg p-6 shadow-sm hover-lift">
             <div className="text-3xl font-bold text-primary mb-2">24/7</div>
             <p className="text-muted-foreground">Animal Care</p>
           </div>
-          <div className="bg-card rounded-lg p-6 shadow-sm">
-            <div className="text-3xl font-bold text-accent-dark mb-2">100%</div>
+          <div className="bg-card rounded-lg p-6 shadow-sm hover-lift">
+            <div className="text-3xl font-bold text-accent-dark mb-2">{quality}%</div>
             <p className="text-muted-foreground">Quality Assured</p>
           </div>
         </div>

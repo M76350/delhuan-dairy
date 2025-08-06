@@ -85,9 +85,18 @@ const HeroSection = () => {
           
           <Button 
             size="lg" 
+            className="premium-gradient text-white font-semibold px-8 py-4 text-lg hover-lift"
+            onClick={() => window.open('tel:+917635065908', '_self')}
+          >
+            <Phone className="mr-2 h-5 w-5" />
+            Call Now: +91 7635065908
+          </Button>
+
+          <Button 
+            size="lg" 
             variant="outline"
-            className="border-white text-black hover:bg-white hover:text-primary px-8 py-4 text-lg hover-lift" 
-            // className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg hover-lift"
+            className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg hover-lift"
+            onClick={() => window.open('https://wa.me/917635065908', '_blank')}
           >
             <MessageCircle className="mr-2 h-5 w-5" />
             WhatsApp Us
@@ -96,6 +105,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="accent-gradient text-black font-semibold px-8 py-4 text-lg hover-lift"
+            onClick={() => document.getElementById('milk-rate')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <TrendingUp className="mr-2 h-5 w-5" />
             Check Milk Rate

@@ -23,33 +23,61 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    
+    if (!formData.name || !formData.phone || !formData.message) {
+      return;
+    }
+
+    // Create WhatsApp message
+    const message = `📧 *Contact Form Submission*
+
+👤 *Name:* ${formData.name}
+📱 *Phone:* ${formData.phone}
+📧 *Email:* ${formData.email || 'Not provided'}
+💬 *Message:* ${formData.message}
+
+*Sent from:* Delhuan Dairy Website`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/917635065908?text=${encodedMessage}`;
+    
+    // Send email data (in real implementation, this would be sent to a backend)
+    console.log('Sending contact form to email:', {
+      to: 'manishkumar09112002@gmail.com',
+      subject: 'New Contact Form Submission',
+      data: formData
+    });
+
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form
+    setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
   const contactInfo = [
     {
       icon: Phone,
       title: 'Phone Number',
-      details: ['+91 XXXXXXXXXX', '+91 XXXXXXXXXX'],
+      details: ['+91 7635065908', '+91 7635065908'],
       color: 'primary'
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp',
-      details: ['+91 XXXXXXXXXX', 'Quick Support'],
+      details: ['+91 7635065908', 'Quick Support'],
       color: 'accent'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@delhuandairy.com', 'support@delhuandairy.com'],
+      details: ['manishkumar09112002@gmail.com', 'info@delhuandairy.com'],
       color: 'primary'
     },
     {
       icon: MapPin,
       title: 'Address',
-      details: ['Delhuan Village, Dinara Thana', 'Bihar, India'],
+      details: ['Village Delhuan, Post Indour', 'P.S Dinara, Rohtas, Bihar - 802213'],
       color: 'accent'
     }
   ];
