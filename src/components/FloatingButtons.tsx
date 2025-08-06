@@ -9,7 +9,7 @@ const FloatingButtons = () => {
       <Button
         size="lg"
         className="w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-green-500 hover:bg-green-600 text-white p-0"
-        onClick={() => window.open('https://wa.me/91XXXXXXXXXX', '_blank')}
+        onClick={() => window.open('https://wa.me/917635065908', '_blank')}
       >
         <MessageCircle className="h-6 w-6" />
       </Button>
@@ -18,7 +18,7 @@ const FloatingButtons = () => {
       <Button
         size="lg"
         className="w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 premium-gradient text-white p-0"
-        onClick={() => window.open('tel:+91XXXXXXXXXX', '_self')}
+        onClick={() => window.open('tel:+917635065908', '_self')}
       >
         <Phone className="h-6 w-6" />
       </Button>

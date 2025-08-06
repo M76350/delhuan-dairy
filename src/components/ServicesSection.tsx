@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Milk, Stethoscope, Package, Pill, Droplets, ShoppingBag } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import ServiceModal from '@/components/ServiceModal';
 
 const ServicesSection = () => {
+  const [selectedService, setSelectedService] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleServiceClick = (service: any) => {
+    setSelectedService({
+      title: service.title,
+      description: service.description,
+      features: service.features,
+      bookingInfo: `Book ${service.title} service with our expert team. Available 6 days a week with emergency support 24/7.`
+    });
+    setIsModalOpen(true);
+  };
+
   const services = [
     {
       icon: Milk,
@@ -94,6 +108,7 @@ const ServicesSection = () => {
                 <Button 
                   variant="outline" 
                   className="w-full group-hover:border-primary group-hover:text-primary transition-colors"
+                  onClick={() => handleServiceClick(service)}
                 >
                   Learn More
                 </Button>
@@ -113,16 +128,35 @@ const ServicesSection = () => {
               and solutions for your livestock and dairy needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="premium-gradient text-white px-8">
+              <Button 
+                size="lg" 
+                className="premium-gradient text-white px-8"
+                onClick={() => handleServiceClick({
+                  title: 'Premium Consultation Service',
+                  description: 'Get expert consultation for dairy management and animal care',
+                  features: ['One-on-one consultation', 'Customized solutions', 'Follow-up support', 'Expert guidance'],
+                })}
+              >
                 Book Consultation
               </Button>
-              <Button size="lg" variant="outline" className="px-8">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="px-8"
+                onClick={() => window.open('tel:+917635065908', '_self')}
+              >
                 Emergency Support
               </Button>
             </div>
           </div>
         </div>
       </div>
+      
+      <ServiceModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        service={selectedService}
+      />
     </section>
   );
 };

@@ -48,7 +48,7 @@ const Footer = () => {
               <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+              <a href="https://wa.me/917635065908" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
                 <MessageCircle className="h-5 w-5" />
               </a>
             </div>
@@ -99,8 +99,8 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-accent" />
                 <div className="text-sm opacity-90">
-                  <p>+91 XXXXXXXXXX</p>
-                  <p>+91 XXXXXXXXXX</p>
+                  <p>+91 7635065908</p>
+                  <p>+91 7635065908</p>
                 </div>
               </div>
               
@@ -114,7 +114,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <MessageCircle className="h-5 w-5 text-accent" />
                 <div className="text-sm opacity-90">
-                  <p>WhatsApp: +91 XXXXXXXXXX</p>
+                  <p>WhatsApp: +91 7635065908</p>
                 </div>
               </div>
             </div>

@@ -33,7 +33,7 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.location.href = '#home'}>
             <img src={logo} alt="Delhuan Dairy" className="h-12 w-auto" />
             <div className="hidden sm:block">
               <h1 className="text-xl font-poppins font-bold text-primary">Delhuan Dairy</h1>
@@ -57,12 +57,21 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-3">
-            <Button variant="outline" size="sm" className="hidden md:flex items-center space-x-2">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="hidden md:flex items-center space-x-2"
+              onClick={() => window.open('tel:+917635065908', '_self')}
+            >
               <Phone className="h-4 w-4" />
               <span>Call Now</span>
             </Button>
             
-            <Button size="sm" className="hidden md:flex items-center space-x-2 premium-gradient text-white">
+            <Button 
+              size="sm" 
+              className="hidden md:flex items-center space-x-2 premium-gradient text-white"
+              onClick={() => window.open('https://wa.me/917635065908', '_blank')}
+            >
               <MessageCircle className="h-4 w-4" />
               <span>WhatsApp</span>
             </Button>
@@ -102,11 +111,20 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col space-y-2 px-4 pt-3 border-t border-border">
-                <Button variant="outline" size="sm" className="flex items-center justify-center space-x-2">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="flex items-center justify-center space-x-2"
+                  onClick={() => window.open('tel:+917635065908', '_self')}
+                >
                   <Phone className="h-4 w-4" />
                   <span>Call Now</span>
                 </Button>
-                <Button size="sm" className="flex items-center justify-center space-x-2 premium-gradient text-white">
+                <Button 
+                  size="sm" 
+                  className="flex items-center justify-center space-x-2 premium-gradient text-white"
+                  onClick={() => window.open('https://wa.me/917635065908', '_blank')}
+                >
                   <MessageCircle className="h-4 w-4" />
                   <span>WhatsApp</span>
                 </Button>

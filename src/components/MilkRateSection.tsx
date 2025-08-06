@@ -2,6 +2,7 @@ import React from 'react';
 import { Clock, TrendingUp, Calendar } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import AnimatedCounter from '@/components/AnimatedCounter';
 
 const MilkRateSection = () => {
   const milkRates = [
@@ -62,7 +63,14 @@ const MilkRateSection = () => {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-3xl font-bold text-accent-dark">{rate.rate}</div>
+                      <div className="text-3xl font-bold text-accent-dark">
+                        <AnimatedCounter 
+                          end={parseInt(rate.rate.replace('₹', ''))} 
+                          prefix="₹" 
+                          duration={1500}
+                          className="inline"
+                        />
+                      </div>
                       <div className="text-sm text-muted-foreground">per liter</div>
                     </div>
                   </div>

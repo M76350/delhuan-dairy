@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ShoppingCart, Star, Truck, Award } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import dairyProducts from '@/assets/dairy-products.jpg';
+import OrderPopup from '@/components/OrderPopup';
 
 const ProductsSection = () => {
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [isOrderPopupOpen, setIsOrderPopupOpen] = useState(false);
+
+  const handleOrderClick = (product: any) => {
+    setSelectedProduct({
+      id: product.name.toLowerCase().replace(/\s+/g, '-'),
+      name: product.name,
+      price: product.price,
+      image: product.image
+    });
+    setIsOrderPopupOpen(true);
+  };
+
   const products = [
     {
+      id: 'pure-cow-ghee',
       name: 'Pure Cow Ghee',
       price: '₹480/500g',
       originalPrice: '₹520',
@@ -140,6 +155,7 @@ const ProductsSection = () => {
                   <Button 
                     className="flex-1 premium-gradient text-white"
                     size="sm"
+                    onClick={() => handleOrderClick(product)}
                   >
                     <ShoppingCart className="w-4 h-4 mr-2" />
                     Order Now
@@ -181,6 +197,12 @@ const ProductsSection = () => {
           </div>
         </div>
       </div>
+
+      <OrderPopup
+        isOpen={isOrderPopupOpen}
+        onClose={() => setIsOrderPopupOpen(false)}
+        product={selectedProduct}
+      />
     </section>
   );
 };
