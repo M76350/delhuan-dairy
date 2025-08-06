@@ -89,13 +89,13 @@ const HeroSection = () => {
             onClick={() => window.open('tel:+917635065908', '_self')}
           >
             <Phone className="mr-2 h-5 w-5" />
-            Call Now: +91 7635065908
+            contact us
           </Button>
 
           <Button 
             size="lg" 
             variant="outline"
-            className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg hover-lift"
+            className="border-white text-black hover:bg-white hover:text-primary px-8 py-4 text-lg hover-lift"
             onClick={() => window.open('https://wa.me/917635065908', '_blank')}
           >
             <MessageCircle className="mr-2 h-5 w-5" />

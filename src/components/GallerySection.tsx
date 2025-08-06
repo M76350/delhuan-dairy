@@ -16,19 +16,10 @@ const GallerySection = () => {
     { src: heroImage2, title: 'Modern Farm Infrastructure', category: 'Farm' },
     { src: heroImage3, title: 'Healthy Livestock', category: 'Farm' },
     { src: dairyProducts, title: 'Farm Operations', category: 'Farm' },
-    { src: heroImage1, title: 'Cattle Management', category: 'Farm' },
-    { src: heroImage2, title: 'Feeding Systems', category: 'Farm' },
-    { src: heroImage3, title: 'Grazing Areas', category: 'Farm' },
-    { src: dairyProducts, title: 'Farm Hygiene', category: 'Farm' },
-    { src: heroImage1, title: 'Milking Stations', category: 'Farm' },
-    { src: heroImage2, title: 'Quality Control', category: 'Farm' },
+    
     
     // Operations Category
-    { src: heroImage2, title: 'Modern Milk Collection', category: 'Operations' },
-    { src: heroImage1, title: 'Digital Weighing', category: 'Operations' },
-    { src: heroImage3, title: 'Fat Testing Lab', category: 'Operations' },
-    { src: dairyProducts, title: 'Processing Unit', category: 'Operations' },
-    { src: heroImage2, title: 'Storage Facilities', category: 'Operations' },
+   
     { src: heroImage1, title: 'Transport System', category: 'Operations' },
     { src: heroImage3, title: 'Quality Testing', category: 'Operations' },
     { src: dairyProducts, title: 'Collection Centers', category: 'Operations' },
@@ -38,12 +29,7 @@ const GallerySection = () => {
     // Services Category
     { src: heroImage3, title: 'Animal Healthcare', category: 'Services' },
     { src: heroImage1, title: 'Veterinary Care', category: 'Services' },
-    { src: heroImage2, title: 'Vaccination Programs', category: 'Services' },
-    { src: dairyProducts, title: 'Health Checkups', category: 'Services' },
-    { src: heroImage3, title: 'Emergency Treatment', category: 'Services' },
-    { src: heroImage1, title: 'Medicine Supply', category: 'Services' },
-    { src: heroImage2, title: 'Consultation Services', category: 'Services' },
-    { src: dairyProducts, title: 'Animal Tagging', category: 'Services' },
+    
     { src: heroImage3, title: 'Calcium Treatment', category: 'Services' },
     { src: heroImage1, title: 'Feed Supplements', category: 'Services' },
     
@@ -53,35 +39,19 @@ const GallerySection = () => {
     { src: heroImage2, title: 'Fresh Paneer', category: 'Products' },
     { src: heroImage3, title: 'Pure Butter', category: 'Products' },
     { src: dairyProducts, title: 'Sudha Dana Feed', category: 'Products' },
-    { src: heroImage1, title: 'Calcium Powder', category: 'Products' },
-    { src: heroImage2, title: 'Organic Milk', category: 'Products' },
-    { src: heroImage3, title: 'Traditional Curd', category: 'Products' },
-    { src: dairyProducts, title: 'Health Supplements', category: 'Products' },
-    { src: heroImage1, title: 'Nutritional Feed', category: 'Products' },
+  
     
     // Quality Category
     { src: heroImage1, title: 'Quality Assurance', category: 'Quality' },
     { src: heroImage2, title: 'Laboratory Testing', category: 'Quality' },
     { src: heroImage3, title: 'Hygiene Standards', category: 'Quality' },
-    { src: dairyProducts, title: 'Safety Protocols', category: 'Quality' },
-    { src: heroImage1, title: 'Purity Testing', category: 'Quality' },
-    { src: heroImage2, title: 'Chemical Analysis', category: 'Quality' },
-    { src: heroImage3, title: 'Contamination Check', category: 'Quality' },
-    { src: dairyProducts, title: 'Standard Compliance', category: 'Quality' },
-    { src: heroImage1, title: 'Quality Certification', category: 'Quality' },
-    { src: heroImage2, title: 'Regular Audits', category: 'Quality' },
+   
     
     // Technology Category
     { src: heroImage2, title: 'Digital Technology', category: 'Technology' },
     { src: heroImage1, title: 'Automated Systems', category: 'Technology' },
     { src: heroImage3, title: 'Digital Records', category: 'Technology' },
-    { src: dairyProducts, title: 'Smart Monitoring', category: 'Technology' },
-    { src: heroImage2, title: 'Electronic Weighing', category: 'Technology' },
-    { src: heroImage1, title: 'Data Management', category: 'Technology' },
-    { src: heroImage3, title: 'Mobile App Interface', category: 'Technology' },
-    { src: dairyProducts, title: 'Cloud Storage', category: 'Technology' },
-    { src: heroImage2, title: 'Real-time Tracking', category: 'Technology' },
-    { src: heroImage1, title: 'Digital Payments', category: 'Technology' }
+    
   ];
 
   const categories = ['All', 'Farm', 'Operations', 'Services', 'Products', 'Quality', 'Technology'];

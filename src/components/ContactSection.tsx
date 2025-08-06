@@ -95,16 +95,16 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 ">
           {/* Contact Information */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6 ">
             <Card className="shadow-lg border-0">
               <CardHeader className="premium-gradient text-white">
                 <CardTitle className="text-xl font-poppins">Contact Information</CardTitle>
               </CardHeader>
-              <CardContent className="p-6 space-y-6">
+              <CardContent className="p-6 space-y-6 ">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div key={index} className=" flex items-start space-x-4">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
                       info.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'
                     }`}>
@@ -113,9 +113,9 @@ const ContactSection = () => {
                       }`} />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-primary mb-1">{info.title}</h4>
+                      <h4 className="  font-semibold text-primary mb-1">{info.title}</h4>
                       {info.details.map((detail, idx) => (
-                        <p key={idx} className="text-sm text-muted-foreground">{detail}</p>
+                        <p key={idx} className="text-sm text-muted-foreground  flex  text-wrap break-words wrap-break-word ">{detail}</p>
                       ))}
                     </div>
                   </div>
