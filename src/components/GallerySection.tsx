@@ -207,7 +207,7 @@ const GallerySection = () => {
         return machineImages;
       case 'Milk Product':
         return milkProductImages;
-      case 'Custome':
+      case 'Customers':
         return customeImages;
       case 'All':
       default:
