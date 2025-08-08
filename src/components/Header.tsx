@@ -33,10 +33,16 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.location.href = '#home'}>
-            <img src={logo} alt="Delhuan Dairy" className="h-12 w-auto" />
+          <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => window.location.href = '#home'}>
+            <img 
+              src={logo} 
+              alt="Delhuan Dairy" 
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-110" 
+            />
             <div className="hidden sm:block">
-              <h1 className="text-xl font-poppins font-bold text-primary">Delhuan Dairy</h1>
+              <h1 className="text-xl font-poppins font-bold text-primary group-hover:text-accent transition-colors duration-300">
+                Delhuan Dairy
+              </h1>
               <p className="text-sm text-muted-foreground">& Animal Care</p>
             </div>
           </div>

@@ -10,6 +10,9 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
 import InquiryPopup from '@/components/InquiryPopup';
+import LeadershipTeam from '@/components/LeadershipTeam';
+import LoyalCustomers from '@/components/LoyalCustomers';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const Index = () => {
   const [showInquiryPopup, setShowInquiryPopup] = useState(false);
@@ -36,9 +39,12 @@ const Index = () => {
       <ServicesSection />
       <MilkRateSection />
       <ProductsSection />
+      <LeadershipTeam />
+      <LoyalCustomers />
       <GallerySection />
       <ContactSection />
       <Footer />
+      <ScrollToTop />
       <FloatingButtons />
       <InquiryPopup 
         isOpen={showInquiryPopup} 
