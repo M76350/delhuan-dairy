@@ -10,6 +10,13 @@ const AboutSection = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [galleryImage, setGalleryImage] = useState<string | null>(null);
 
+  // Function to generate random avatar URLs
+  const generateAvatar = (seed: string, style: string = 'avataaars') => {
+    const backgrounds = ['b6e3f4', 'c0aede', 'd1d4f9', 'ffd5dc', 'ffdfbf', 'e8f5e8', 'f4e4d6'];
+    const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    return `https://api.dicebear.com/7.x/${style}/svg?seed=${seed}&backgroundColor=${randomBg}`;
+  };
+
   const animateCount = (start: number, end: number, setter: (value: number) => void, duration: number = 2000) => {
     const startTime = Date.now();
     const updateCount = () => {
@@ -73,17 +80,17 @@ const AboutSection = () => {
       name: 'Anil Kumar Singh',
       details: 'S/o Shiv Mangle Singh',
       position: 'Secretary',
-      image: 'https://picsum.photos/150/150?random=1'
+      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=anil&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf'
     },
     {
       name: 'Arun Singh',
       position: 'Chairman',
-      image: 'https://picsum.photos/150/150?random=2'
+      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=arun&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf'
     },
     {
       name: 'Shyam Narayan Singh',
       position: 'Previous Chairman',
-      image: 'https://picsum.photos/150/150?random=3'
+      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=shyam&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf'
     }
   ];
 

@@ -25,6 +25,7 @@ const Index = () => {
       
       return () => clearTimeout(timer);
     }
+    // setShowInquiryPopup(true);
   }, []);
 
   return (
