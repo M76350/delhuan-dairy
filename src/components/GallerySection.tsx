@@ -11,50 +11,29 @@ const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const galleryImages = [
-    // Farm Category
-    { src: heroImage1, title: 'Premium Dairy Farm', category: 'Farm' },
-    { src: heroImage2, title: 'Modern Farm Infrastructure', category: 'Farm' },
-    { src: heroImage3, title: 'Healthy Livestock', category: 'Farm' },
-    { src: dairyProducts, title: 'Farm Operations', category: 'Farm' },
+    // Product Category
+    { src: dairyProducts, title: 'Fresh Dairy Products', category: 'Product' },
+    { src: heroImage1, title: 'Premium Ghee', category: 'Product' },
+    { src: heroImage2, title: 'Fresh Paneer', category: 'Product' },
+    { src: heroImage3, title: 'Pure Butter', category: 'Product' },
     
+    // Machine Category
+    { src: heroImage2, title: 'Milking Machine', category: 'Machine' },
+    { src: heroImage1, title: 'Pasteurizer', category: 'Machine' },
+    { src: heroImage3, title: 'Packaging Equipment', category: 'Machine' },
     
-    // Operations Category
-   
-    { src: heroImage1, title: 'Transport System', category: 'Operations' },
-    { src: heroImage3, title: 'Quality Testing', category: 'Operations' },
-    { src: dairyProducts, title: 'Collection Centers', category: 'Operations' },
-    { src: heroImage2, title: 'Documentation Process', category: 'Operations' },
-    { src: heroImage1, title: 'Payment System', category: 'Operations' },
+    // Milk Product Category
+    { src: heroImage3, title: 'Fresh Milk', category: 'Milk Product' },
+    { src: dairyProducts, title: 'Flavored Milk', category: 'Milk Product' },
+    { src: heroImage1, title: 'Yogurt', category: 'Milk Product' },
     
-    // Services Category
-    { src: heroImage3, title: 'Animal Healthcare', category: 'Services' },
-    { src: heroImage1, title: 'Veterinary Care', category: 'Services' },
-    
-    { src: heroImage3, title: 'Calcium Treatment', category: 'Services' },
-    { src: heroImage1, title: 'Feed Supplements', category: 'Services' },
-    
-    // Products Category
-    { src: dairyProducts, title: 'Fresh Dairy Products', category: 'Products' },
-    { src: heroImage1, title: 'Premium Ghee', category: 'Products' },
-    { src: heroImage2, title: 'Fresh Paneer', category: 'Products' },
-    { src: heroImage3, title: 'Pure Butter', category: 'Products' },
-    { src: dairyProducts, title: 'Sudha Dana Feed', category: 'Products' },
-  
-    
-    // Quality Category
-    { src: heroImage1, title: 'Quality Assurance', category: 'Quality' },
-    { src: heroImage2, title: 'Laboratory Testing', category: 'Quality' },
-    { src: heroImage3, title: 'Hygiene Standards', category: 'Quality' },
-   
-    
-    // Technology Category
-    { src: heroImage2, title: 'Digital Technology', category: 'Technology' },
-    { src: heroImage1, title: 'Automated Systems', category: 'Technology' },
-    { src: heroImage3, title: 'Digital Records', category: 'Technology' },
-    
+    // Custome Category
+    { src: heroImage2, title: 'Custom Packaging', category: 'Custome' },
+    { src: heroImage1, title: 'Bulk Orders', category: 'Custome' }, 
+    { src: heroImage3, title: 'Special Requests', category: 'Custome' },
   ];
 
-  const categories = ['All', 'Farm', 'Operations', 'Services', 'Products', 'Quality', 'Technology'];
+  const categories = ['Product', 'Machine', 'Milk Product', 'Custome', 'All'];
   const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredImages = activeCategory === 'All' 
@@ -90,12 +69,11 @@ const GallerySection = () => {
             Our Gallery
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Take a visual journey through our modern dairy facilities, healthy livestock, 
-            and premium products that define our commitment to excellence.
+            Browse our dairy categories
           </p>
         </div>
 
-        {/* Category Filter */}
+        {/* Category Filter - All tab moved to end */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <Button
@@ -126,6 +104,7 @@ const GallerySection = () => {
                   src={image.src}
                   alt={image.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <Camera className="h-8 w-8 text-white" />
@@ -147,6 +126,7 @@ const GallerySection = () => {
               size="sm"
               className="absolute top-4 right-4 z-10 bg-white/10 border-white/20 text-white hover:bg-white/20"
               onClick={closeLightbox}
+              aria-label="Close lightbox"
             >
               <X className="h-4 w-4" />
             </Button>
@@ -156,6 +136,7 @@ const GallerySection = () => {
               size="sm"
               className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/10 border-white/20 text-white hover:bg-white/20"
               onClick={() => navigateImage('prev')}
+              aria-label="Previous image"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -165,6 +146,7 @@ const GallerySection = () => {
               size="sm"
               className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/10 border-white/20 text-white hover:bg-white/20"
               onClick={() => navigateImage('next')}
+              aria-label="Next image"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>

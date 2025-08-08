@@ -8,6 +8,7 @@ const AboutSection = () => {
   const [quality, setQuality] = useState(0);
   const statsRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [galleryImage, setGalleryImage] = useState<string | null>(null);
 
   const animateCount = (start: number, end: number, setter: (value: number) => void, duration: number = 2000) => {
     const startTime = Date.now();
@@ -29,8 +30,8 @@ const AboutSection = () => {
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          animateCount(0, 500, setFarmers);
-          animateCount(0, 5000, setCollection);
+          animateCount(0, 300, setFarmers);
+          animateCount(0, 450, setCollection);
           animateCount(0, 100, setQuality);
         }
       },
@@ -67,6 +68,33 @@ const AboutSection = () => {
     }
   ];
 
+  const leadership = [
+    {
+      name: 'Anil Kumar Singh',
+      details: 'S/o Shiv Mangle Singh',
+      position: 'Secretary',
+      image: 'https://picsum.photos/150/150?random=1'
+    },
+    {
+      name: 'Arun Singh',
+      position: 'Chairman',
+      image: 'https://picsum.photos/150/150?random=2'
+    },
+    {
+      name: 'Shyam Narayan Singh',
+      position: 'Previous Chairman',
+      image: 'https://picsum.photos/150/150?random=3'
+    }
+  ];
+
+  const openGallery = (image: string) => {
+    setGalleryImage(image);
+  };
+
+  const closeGallery = () => {
+    setGalleryImage(null);
+  };
+
   return (
     <section id="about" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
@@ -96,38 +124,42 @@ const AboutSection = () => {
             {/* Leadership Team */}
             <div className="bg-card rounded-lg p-6 border shadow-sm">
               <h4 className="text-xl font-poppins font-semibold text-primary mb-4">Leadership Team</h4>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Users className="h-6 w-6 text-primary" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {leadership.map((leader, index) => (
+                  <div key={index} className="flex flex-col items-center text-center">
+                    <div 
+                      className="relative w-32 h-32 mb-4 cursor-pointer hover-lift  rounded-full"
+                      onClick={() => openGallery(leader.image)}
+                    >
+                      <img 
+                        src={leader.image} 
+                        alt={`${leader.name} profile`} 
+                        className="w-full h-full object-cover rounded-full border-2 border-primary/20"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-full">
+                        <span className="text-white text-sm font-semibold">View Gallery</span>
+                      </div>
+                    </div>
+                    <p className="font-semibold text-primary">{leader.name}</p>
+                    <p className="text-sm text-muted-foreground">{leader.position}</p>
+                    {leader.details && (
+                      <p className="text-sm text-muted-foreground">{leader.details}</p>
+                    )}
                   </div>
-                  <div>
-                    <p className="font-semibold text-primary">Anil Kumar Singh</p>
-                    <p className="text-sm text-muted-foreground">Secretary (S/o Shiv Mangle Singh)</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                    <Award className="h-6 w-6 text-accent-dark" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-primary">Arun Singh</p>
-                    <p className="text-sm text-muted-foreground">Chairman</p>
-                  </div>
-                </div>
-                <div className="text-sm text-muted-foreground mt-2">
-                  <p>Previous Chairman: Shyam Narayan Singh</p>
-                </div>
+                ))}
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
-              <Card key={index} className="hover-lift border-0 shadow-lg">
+              <Card key={index} className="hover-lift border-0 shadow-lg group">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <feature.icon className="h-8 w-8 text-primary" />
+                    <feature.icon 
+                      className="h-8 w-8 text-primary transform transition-transform duration-500 ease-in-out group-hover:translate-y-[10px]"
+                      aria-hidden="true"
+                    />
                   </div>
                   <h4 className="text-lg font-poppins font-semibold text-primary mb-2">
                     {feature.title}
@@ -144,11 +176,11 @@ const AboutSection = () => {
         {/* Stats Section */}
         <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="bg-card rounded-lg p-6 shadow-sm hover-lift">
-            <div className="text-3xl font-bold text-primary mb-2">{farmers}+</div>
+            <div className="text-3xl font-bold text-primary mb-2" aria-live="polite">{farmers}+</div>
             <p className="text-muted-foreground">Farmers Served</p>
           </div>
           <div className="bg-card rounded-lg p-6 shadow-sm hover-lift">
-            <div className="text-3xl font-bold text-accent-dark mb-2">{collection}L</div>
+            <div className="text-3xl font-bold text-accent-dark mb-2" aria-live="polite">{collection}L</div>
             <p className="text-muted-foreground">Daily Collection</p>
           </div>
           <div className="bg-card rounded-lg p-6 shadow-sm hover-lift">
@@ -156,10 +188,30 @@ const AboutSection = () => {
             <p className="text-muted-foreground">Animal Care</p>
           </div>
           <div className="bg-card rounded-lg p-6 shadow-sm hover-lift">
-            <div className="text-3xl font-bold text-accent-dark mb-2">{quality}%</div>
+            <div className="text-3xl font-bold text-accent-dark mb-2" aria-live="polite">{quality}%</div>
             <p className="text-muted-foreground">Quality Assured</p>
           </div>
         </div>
+
+        {/* Gallery Modal */}
+        {galleryImage && (
+          <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" onClick={closeGallery}>
+            <div className="relative max-w-3xl w-full p-4">
+              <img 
+                src={galleryImage} 
+                alt="Leadership profile gallery" 
+                className="w-full h-auto rounded-lg"
+              />
+              <button 
+                className="absolute top-2 right-2 bg-white/90 text-black rounded-full w-8 h-8 flex items-center justify-center"
+                onClick={closeGallery}
+                aria-label="Close gallery"
+              >
+                &times;
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
