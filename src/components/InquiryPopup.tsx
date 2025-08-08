@@ -79,8 +79,8 @@ const InquiryPopup = ({ isOpen, onClose }: InquiryPopupProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md mx-auto animate-scale-in">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 border-4 ">
+      <Card className="w-full max-w-md mx-auto animate-scale-in  h-[90vh] overflow-y-auto">
         <CardHeader className="premium-gradient text-white relative">
           <Button
             variant="ghost"
