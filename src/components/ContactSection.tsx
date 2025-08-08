@@ -145,6 +145,28 @@ const ContactSection = () => {
                 </div>
               </CardContent>
             </Card>
+            <div className='flex items-center justify-center'>
+              <a
+                href="https://me-qr.com"
+                style={{ cursor: "pointer", display: "block" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://storage2.me-qr.com/qr/236466467.png"
+                  alt="Create qr code for free"
+                  style={{ border: 0 }}
+                />
+              </a>
+              <a
+                href="https://me-qr.com"
+                style={{ cursor: "default", display: "none", border: 0 }}
+                tabIndex={-1}
+                aria-hidden="true"
+              >
+                Create qr code for free
+              </a>
+            </div>
           </div>
 
           {/* Contact Form */}
