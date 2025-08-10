@@ -10,7 +10,7 @@ const LeadershipTeam = () => {
       position: "Secretary",
       fatherName: "Shiv Mangle Singh",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-      experience: "5+ Years",
+      experience: "15+ Years",
       description: "Leading digital transformation in dairy farming",
       achievements: ["Digital Collection System", "Farmer Welfare Programs"]
     },
@@ -18,7 +18,7 @@ const LeadershipTeam = () => {
       name: "Arun Singh",
       position: "Chairman",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face",
-      experience: "8+ Years",
+      experience: "1+ Years",
       description: "Visionary leader driving growth and innovation",
       achievements: ["Market Expansion", "Quality Standards"]
     },
@@ -26,7 +26,7 @@ const LeadershipTeam = () => {
       name: "Shyam Narayan Singh",
       position: "Previous Chairman",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-      experience: "10+ Years",
+      experience: "14   + Years",
       description: "Founding leader who established strong foundations",
       achievements: ["Establishment", "Community Building"]
     }
@@ -57,7 +57,7 @@ const LeadershipTeam = () => {
                     <img 
                       src={leader.image} 
                       alt={leader.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-left-top group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                   <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">

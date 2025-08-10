@@ -7,56 +7,65 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const LoyalCustomers = () => {
   const customers = [
     {
-      name: "Rajesh Kumar",
+      name: "Shivmangle singh",
+      gender: "male",
+      village: "Delhuan",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      years: "16+ Years",
+      feedback: "Quality products and fair prices. Very happy with their service.",
+      rating: 5
+    },
+    {
+      name: "Ramesh pandey",
       gender: "Male",
       village: "Delhuan",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      years: "8+ Years",
+      years: "14+ Years",
       feedback: "Excellent quality milk and timely delivery. Very satisfied with services.",
       rating: 5
     },
     {
-      name: "Sunita Devi",
-      gender: "Female", 
+      name: "Tajendra pandey",
+      gender: "Male", 
       village: "Delhuan",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=150&h=150&fit=crop&crop=face",
-      years: "6+ Years",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      years: "12+ Years",
       feedback: "Best dairy service in our area. Pure and fresh milk always.",
       rating: 5
     },
     {
-      name: "Mohan Singh",
+      name: "Satendra  Singh",
       gender: "Male",
       village: "Delhuan", 
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-      years: "10+ Years",
+      years: "8+ Years",
       feedback: "Trusted dairy for our family. Great animal care services too.",
       rating: 5
     },
     {
-      name: "Priya Kumari",
-      gender: "Female",
+      name: "Pradeep ran",
+      gender: "Male",
       village: "Delhuan",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-      years: "4+ Years", 
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      years: "10+ Years", 
       feedback: "Professional service and good rates. Highly recommended.",
       rating: 5
     },
     {
-      name: "Ram Prasad",
+      name: "sahendra yadav",
       gender: "Male",
       village: "Delhuan",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face", 
-      years: "7+ Years",
+      years: "16+ Years",
       feedback: "Reliable dairy service with excellent customer support.",
       rating: 5
     },
     {
-      name: "Geeta Singh",
-      gender: "Female",
+      name: "sushil singh",
+      gender: "Male",
       village: "Delhuan",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-      years: "5+ Years",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      years: "12+ Years",
       feedback: "Quality products and fair prices. Very happy with their service.",
       rating: 5
     }
