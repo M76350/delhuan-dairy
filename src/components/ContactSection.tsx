@@ -169,7 +169,7 @@ const ContactSection = () => {
             {/* QR Code */}
             <div className='flex items-center justify-center rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300'>
               <a
-                href="https://me-qr.com"
+                href="https://maps.app.goo.gl/MdZTE1xDxcz7Rqnc7"
                 style={{ cursor: "pointer", display: "block" }}
                 target="_blank"
                 rel="noopener noreferrer"
