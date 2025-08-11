@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { useClickOutside } from '@/hooks/use-click-outside';
 
 interface Product {
   id: string;
@@ -28,6 +29,7 @@ const OrderPopup = ({ isOpen, onClose, product }: OrderPopupProps) => {
   });
   
   const { toast } = useToast();
+  const popupRef = useClickOutside({ isOpen, onClose });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCustomerInfo({
@@ -98,7 +100,7 @@ const OrderPopup = ({ isOpen, onClose, product }: OrderPopupProps) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md mx-auto animate-scale-in">
+      <Card ref={popupRef} className="w-full max-w-md mx-auto animate-scale-in">
         <CardHeader className="premium-gradient text-white relative">
           <Button
             variant="ghost"
