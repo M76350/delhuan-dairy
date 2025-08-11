@@ -2,6 +2,7 @@ import React from 'react';
 import { X, MapPin, Phone, Clock, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useClickOutside } from '@/hooks/use-click-outside';
 
 interface ServiceModalProps {
   isOpen: boolean;
@@ -15,6 +16,8 @@ interface ServiceModalProps {
 }
 
 const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
+  const popupRef = useClickOutside({ isOpen, onClose });
+
   const handleBookService = () => {
     const message = `🔥 *Premium Service Booking*
 
@@ -38,7 +41,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-lg mx-auto animate-scale-in max-h-[90vh] overflow-y-auto">
+      <Card ref={popupRef} className="w-full max-w-lg mx-auto animate-scale-in max-h-[90vh] overflow-y-auto">
         <CardHeader className="premium-gradient text-white relative">
           <Button
             variant="ghost"
