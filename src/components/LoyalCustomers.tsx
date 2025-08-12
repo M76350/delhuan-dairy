@@ -99,11 +99,11 @@ const LoyalCustomers = () => {
                 <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/90 backdrop-blur-sm hover:-translate-y-1 animate-fade-in-up">
                   <CardContent className="p-6">
                     <div className="text-center mb-4">
-                      <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-accent/30 group-hover:border-accent transition-all duration-300 mb-4">
+                      <div className="w-32 h-32 border-2 border-green-400 mx-auto rounded-full overflow-hidden border-3 border-accent/30 group-hover:border-accent transition-all duration-300 mb-4">
                         <img 
                           src={customer.image} 
                           alt={customer.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-cover object-left-top group-hover:scale-110 transition-transform duration-500"
                         />
                       </div>
                       
