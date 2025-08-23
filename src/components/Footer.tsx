@@ -91,16 +91,16 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 mt-0.5 text-accent" />
                 <div className="text-sm opacity-90">
-                  <p>Delhuan Village</p>
-                  <p>Dinara Thana, Bihar</p>
+                  <p>Delhuan </p>
+                  <p>Dinara,802213, Bihar</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-accent" />
                 <div className="text-sm opacity-90">
-                  <p>+91 7635065908</p>
-                  <p>+91 7635065908</p>
+                  <p className='capitalize'>call & support</p>
+                  {/* <p>call</p> */}
                 </div>
               </div>
               
@@ -114,7 +114,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <MessageCircle className="h-5 w-5 text-accent" />
                 <div className="text-sm opacity-90">
-                  <p>WhatsApp: +91 7635065908</p>
+                  <p>WhatsApp</p>
                 </div>
               </div>
             </div>
