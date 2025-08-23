@@ -356,20 +356,7 @@ const Login = () => {
           </CardContent>
         </Card>
 
-        {/* Help Section */}
-        <div className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground mb-4">
-            Need help with your account?
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Button variant="outline" size="sm">
-              Contact Support
-            </Button>
-            <Button variant="outline" size="sm">
-              Call: +91 XXXXXXXXXX
-            </Button>
-          </div>
-        </div>
+        
       </div>
     </div>
   );
