@@ -221,15 +221,15 @@ const Login = () => {
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="otp">Enter OTP</Label>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center ">
                       <InputOTP value={otp} onChange={setOtp} maxLength={6}>
                         <InputOTPGroup>
-                          <InputOTPSlot index={0} />
-                          <InputOTPSlot index={1} />
-                          <InputOTPSlot index={2} />
-                          <InputOTPSlot index={3} />
-                          <InputOTPSlot index={4} />
-                          <InputOTPSlot index={5} />
+                          <InputOTPSlot index={0}  className='border-2 border-black mx-1'/>
+                          <InputOTPSlot index={1}  className='border-2 border-black mx-1'/>
+                          <InputOTPSlot index={2}  className='border-2 border-black mx-1'/>
+                          <InputOTPSlot index={3}  className='border-2 border-black mx-1'/>
+                          <InputOTPSlot index={4}  className='border-2 border-black mx-1'/>
+                          <InputOTPSlot index={5}  className='border-2 border-black mx-1'/>
                         </InputOTPGroup>
                       </InputOTP>
                     </div>

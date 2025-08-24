@@ -63,7 +63,7 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-3">
-            <Button 
+            {/* <Button 
               variant="outline" 
               size="sm" 
               className="hidden md:flex items-center space-x-2"
@@ -71,8 +71,8 @@ const Header = () => {
             >
               <Phone className="h-4 w-4" />
               <span>Call Now</span>
-            </Button>
-            
+            </Button> */}
+{/*             
             <Button 
               size="sm" 
               className="hidden md:flex items-center space-x-2 premium-gradient text-white"
@@ -80,7 +80,7 @@ const Header = () => {
             >
               <MessageCircle className="h-4 w-4" />
               <span>WhatsApp</span>
-            </Button>
+            </Button> */}
 
             <Button 
               className="accent-gradient text-white font-medium px-6"
