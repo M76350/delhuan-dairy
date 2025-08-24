@@ -118,7 +118,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
               Book This Service
             </Button>
             
-            <div className="flex space-x-2">
+            {/* <div className="flex space-x-2">
               <Button 
                 variant="outline" 
                 className="flex-1"
@@ -134,7 +134,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
               >
                 WhatsApp
               </Button>
-            </div>
+            </div> */}
           </div>
         </CardContent>
       </Card>

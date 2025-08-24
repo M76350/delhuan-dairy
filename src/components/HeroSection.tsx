@@ -83,16 +83,16 @@ const HeroSection = () => {
             Call Now: +91 XXXXXXXXXX
           </Button> */}
           
-          <Button 
+          {/* <Button 
             size="lg" 
             className="premium-gradient text-white font-semibold px-8 py-4 text-lg hover-lift"
             onClick={() => window.open('tel:+917635065908', '_self')}
           >
             <Phone className="mr-2 h-5 w-5" />
             contact us
-          </Button>
+          </Button> */}
 
-          <Button 
+          {/* <Button 
             size="lg" 
             variant="outline"
             className="border-white text-black hover:bg-white hover:text-primary px-8 py-4 text-lg hover-lift"
@@ -100,7 +100,7 @@ const HeroSection = () => {
           >
             <MessageCircle className="mr-2 h-5 w-5" />
             WhatsApp Us
-          </Button>
+          </Button> */}
           
           <Button 
             size="lg" 
