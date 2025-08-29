@@ -25,10 +25,10 @@ const LoyalCustomers = () => {
       rating: 5
     },
     {
-      name: "Tajendra pandey",
+      name: "sonu kumar",
       gender: "Male", 
-      village: "Delhuan",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      village: "Rafigunj",
+      image: "src/assets/sonukrafigung.jpg",
       years: "12+ Years",
       feedback: "Best dairy service in our area. Pure and fresh milk always.",
       rating: 5
