@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Star, MapPin, Users } from 'lucide-react';
+import sonuimage from '@/assets/sonukrafigung.jpg';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const LoyalCustomers = () => {
@@ -28,7 +29,7 @@ const LoyalCustomers = () => {
       name: "sonu kumar",
       gender: "Male", 
       village: "Rafigunj",
-      image: "src/assets/sonukrafigung.jpg",
+      image: "/src/assets/sonukrafigung.jpg",
       years: "12+ Years",
       feedback: "Best dairy service in our area. Pure and fresh milk always.",
       rating: 5
