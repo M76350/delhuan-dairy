@@ -9,7 +9,7 @@ const LeadershipTeam = () => {
       name: "Anil Kumar Singh",
       position: "Secretary",
       fatherName: "Shiv Mangle Singh",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+      image: "/src/assets/delhuan-sachiv-dairyfarm.jpeg",
       experience: "15+ Years",
       description: "Leading digital transformation in dairy farming",
       achievements: ["Digital Collection System", "Farmer Welfare Programs"]
@@ -46,16 +46,16 @@ const LeadershipTeam = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {leaders.map((leader, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:-translate-y-2 animate-fade-in-up"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <CardContent className="p-8 text-center">
                 <div className="relative mb-6">
                   <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-accent/20 group-hover:border-accent/60 transition-all duration-300">
-                    <img 
-                      src={leader.image} 
+                    <img
+                      src={leader.image}
                       alt={leader.name}
                       className="w-full h-full object-cover object-left-top group-hover:scale-110 transition-transform duration-500"
                     />
@@ -70,7 +70,7 @@ const LeadershipTeam = () => {
                 <h3 className="text-xl font-poppins font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300">
                   {leader.name}
                 </h3>
-                
+
                 {leader.fatherName && (
                   <p className="text-sm text-muted-foreground mb-4">
                     Son of {leader.fatherName}
@@ -94,9 +94,9 @@ const LeadershipTeam = () => {
                     </div>
                     <div className="flex flex-wrap justify-center gap-2">
                       {leader.achievements.map((achievement, idx) => (
-                        <Badge 
-                          key={idx} 
-                          variant="outline" 
+                        <Badge
+                          key={idx}
+                          variant="outline"
                           className="text-xs border-primary/20 hover:border-accent transition-colors duration-300"
                         >
                           {achievement}

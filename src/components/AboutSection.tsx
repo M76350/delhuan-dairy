@@ -24,7 +24,7 @@ const AboutSection = () => {
       const progress = Math.min(elapsed / duration, 1);
       const currentValue = Math.floor(start + (end - start) * progress);
       setter(currentValue);
-      
+
       if (progress < 1) {
         requestAnimationFrame(updateCount);
       }
@@ -80,7 +80,7 @@ const AboutSection = () => {
       name: 'Anil Kumar Singh',
       details: 'S/o Shiv Mangle Singh',
       position: 'Secretary',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=anil&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf'
+      image: '/src/assets/delhuan-sachiv-dairyfarm.jpeg'
     },
     {
       name: 'Arun Singh',
@@ -110,7 +110,7 @@ const AboutSection = () => {
             About Delhuan Dairy & Animal Care
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A premier dairy cooperative serving Delhuan village in Dinara Thana, committed to delivering 
+            A premier dairy cooperative serving Delhuan village in Dinara Thana, committed to delivering
             fresh milk and comprehensive animal healthcare services.
           </p>
         </div>
@@ -119,28 +119,28 @@ const AboutSection = () => {
           <div className="space-y-6">
             <h3 className="text-3xl font-poppins font-semibold text-primary">Our Story</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Established in Delhuan village, Dinara Thana, our dairy cooperative has been a cornerstone 
-              of the local agricultural community. We are proud to be connected with Sudha Plant Kochas, 
+              Established in Delhuan village, Dinara Thana, our dairy cooperative has been a cornerstone
+              of the local agricultural community. We are proud to be connected with Sudha Plant Kochas,
               Head Center Araa, Bihar, ensuring the highest standards in milk collection and distribution.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Our commitment to excellence extends beyond milk collection to comprehensive animal health 
+              Our commitment to excellence extends beyond milk collection to comprehensive animal health
               services, supporting local farmers with expert care and modern technology.
             </p>
-            
+
             {/* Leadership Team */}
             <div className="bg-card rounded-lg p-6 border shadow-sm">
               <h4 className="text-xl font-poppins font-semibold text-primary mb-4">Leadership Team</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {leadership.map((leader, index) => (
                   <div key={index} className="flex flex-col items-center text-center">
-                    <div 
+                    <div
                       className="relative w-32 h-32 mb-4 cursor-pointer hover-lift  rounded-full"
                       onClick={() => openGallery(leader.image)}
                     >
-                      <img 
-                        src={leader.image} 
-                        alt={`${leader.name} profile`} 
+                      <img
+                        src={leader.image}
+                        alt={`${leader.name} profile`}
                         className="w-full h-full object-cover rounded-full border-2 border-primary/20"
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-full">
@@ -163,7 +163,7 @@ const AboutSection = () => {
               <Card key={index} className="hover-lift border-0 shadow-lg group">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <feature.icon 
+                    <feature.icon
                       className="h-8 w-8 text-primary transform transition-transform duration-500 ease-in-out group-hover:translate-y-[10px]"
                       aria-hidden="true"
                     />
@@ -204,12 +204,12 @@ const AboutSection = () => {
         {galleryImage && (
           <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" onClick={closeGallery}>
             <div className="relative max-w-3xl w-full p-4">
-              <img 
-                src={galleryImage} 
-                alt="Leadership profile gallery" 
+              <img
+                src={galleryImage}
+                alt="Leadership profile gallery"
                 className="w-full h-auto rounded-lg"
               />
-              <button 
+              <button
                 className="absolute top-2 right-2 bg-white/90 text-black rounded-full w-8 h-8 flex items-center justify-center"
                 onClick={closeGallery}
                 aria-label="Close gallery"
