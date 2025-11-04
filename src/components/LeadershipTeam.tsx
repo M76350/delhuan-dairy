@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Users, Award, Calendar } from 'lucide-react';
+import dairyImage from "@/assets/delhuan-sachiv-dairyfarm.jpeg";
 
 const LeadershipTeam = () => {
   const leaders = [
@@ -9,7 +10,7 @@ const LeadershipTeam = () => {
       name: "Anil Kumar Singh",
       position: "Secretary",
       fatherName: "Shiv Mangle Singh",
-      image: "/src/assets/delhuan-sachiv-dairyfarm.jpeg",
+      image: dairyImage,
       experience: "15+ Years",
       description: "Leading digital transformation in dairy farming",
       achievements: ["Digital Collection System", "Farmer Welfare Programs"]

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Users, Award, Shield, Zap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import dairyImage from "@/assets/delhuan-sachiv-dairyfarm.jpeg";
+
 
 const AboutSection = () => {
   const [farmers, setFarmers] = useState(0);
@@ -80,7 +82,7 @@ const AboutSection = () => {
       name: 'Anil Kumar Singh',
       details: 'S/o Shiv Mangle Singh',
       position: 'Secretary',
-      image: '/src/assets/delhuan-sachiv-dairyfarm.jpeg'
+      image: dairyImage,
     },
     {
       name: 'Arun Singh',
