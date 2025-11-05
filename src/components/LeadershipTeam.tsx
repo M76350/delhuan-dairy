@@ -9,7 +9,7 @@ const LeadershipTeam = () => {
       name: "Anil Kumar Singh",
       position: "Secretary",
       fatherName: "Shiv Mangle Singh",
-      image: "/src/assets/delhuan-sachiv-dairyfarm.jpeg",
+      image: "https://i.postimg.cc/LXbnMNt5/Gemini-Generated-Image-oienxxoienxxoien.png",
       experience: "15+ Years",
       description: "Leading digital transformation in dairy farming",
       achievements: ["Digital Collection System", "Farmer Welfare Programs"]

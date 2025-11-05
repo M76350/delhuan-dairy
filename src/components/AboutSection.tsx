@@ -80,7 +80,7 @@ const AboutSection = () => {
       name: 'Anil Kumar Singh',
       details: 'S/o Shiv Mangle Singh',
       position: 'Secretary',
-      image: '/src/assets/delhuan-sachiv-dairyfarm.jpeg'
+      image: 'https://i.postimg.cc/LXbnMNt5/Gemini-Generated-Image-oienxxoienxxoien.png'
     },
     {
       name: 'Arun Singh',
