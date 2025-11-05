@@ -29,7 +29,7 @@ const LoyalCustomers = () => {
       name: "sonu kumar",
       gender: "Male", 
       village: "Rafigunj",
-      image: "/src/assets/sonukrafigung.jpg",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
       years: "12+ Years",
       feedback: "Best dairy service in our area. Pure and fresh milk always.",
       rating: 5
