@@ -156,7 +156,7 @@ const GallerySection = () => {
       category: 'Custome' 
     },
     { 
-      src: 'https://www.nestle.lk/sites/g/files/pydnoa551/files/styles/webp_image/public/midim_banner-image-2022.jpg.webp?itok=PsFXJi3g', 
+      src: 'https://c8.alamy.com/comp/CX0F5B/rural-woman-with-cow-andhra-pradesh-south-india-CX0F5B.jpg', 
       title: 'Sita Devi', 
       description: 'Bulk buyer for family and neighbors', 
       areas: 'Dinara and Dehri regions', 
