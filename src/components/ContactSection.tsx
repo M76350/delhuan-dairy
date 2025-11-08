@@ -75,7 +75,7 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: [ 'info@delhuandairy.com'],
+      details: ['info@delhuandairy.com'],
       color: 'primary'
     },
     {
@@ -163,11 +163,16 @@ const ContactSection = () => {
                 </div>
               </CardContent>
             </Card>
+            <div><h2 className="text-[20px] font-bold text-black bg-yellow-400 p-2">
+              Our Connection
+            </h2>
+
+            </div>
 
             {/* QR Code */}
             <div className='flex items-center justify-center rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300'>
               <a
-                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1970.7821920319245!2d83.99330449225273!3d25.264776949103762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d93dd6dd8bc41%3A0x6e9a1435ee05428d!2sSudha%20milk%20callection%20center!5e0!3m2!1sen!2sin!4v1754398175795!5m2!1sen!2sin"
+                href="https://adhunik-lakva-polio-hospital-gitana.vercel.app/"
                 style={{ cursor: "pointer", display: "block" }}
                 target="_blank"
                 rel="noopener noreferrer"
