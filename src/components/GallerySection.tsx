@@ -79,15 +79,15 @@ const GallerySection = () => {
       category: 'Machine' 
     },
     { 
-      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbycuAcU7hZ_pqzGBLnkDWGRsHOU6iAMkUcg&s', 
-      title: 'Milk Storage Tanks', 
+      src: 'https://i.postimg.cc/D0mpSj28/delhuan-dairy-kochas-13.jpg', 
+      title: 'Milk Storage Tanks delhuan', 
       description: 'temprory store for  dairy  collection',
       capacity: '40/45 liter',
       category: 'Machine' 
     },
     { 
-      src: 'https://media.licdn.com/dms/image/v2/D4D22AQGgLemx6cAhpQ/feedshare-shrink_800/feedshare-shrink_800/0/1731809943915?e=2147483647&v=beta&t=8pmCMdXd5UWajeRgH3D9APhOnxYafNNRV3qIxpzsnzc', 
-      title: 'Quality Testing Lab', 
+      src: 'https://i.postimg.cc/rszZDn8G/delhuan-dairy-kochas-14.jpg', 
+      title: 'Quality Testing Machine', 
       description: 'Complete quality control laboratory',
       tests: 'Fat, Protein, SNF',
       category: 'Machine' 
@@ -149,43 +149,78 @@ const GallerySection = () => {
 
   const customeImages = [
     { 
-      src: 'https://www.shutterstock.com/image-photo/rural-scene-indian-farmer-standing-260nw-2224990567.jpg', 
-      title: 'Sahendra Yadav', 
+      src: 'https://i.postimg.cc/2yJchQ6G/delhuan-dairy-Delhuan.jpg', 
+      title: 'Vinod Yadav', 
       description: 'Regular customer for fresh milk and ghee', 
       areas: 'Delhuan village and nearby areas', 
       category: 'Custome' 
     },
     { 
-      src: 'https://c8.alamy.com/comp/CX0F5B/rural-woman-with-cow-andhra-pradesh-south-india-CX0F5B.jpg', 
-      title: 'Sita Devi', 
+      src: 'https://i.postimg.cc/nr5RB4z3/delhuan-dairy-kochas.jpg', 
+      title: 'Manish kumar', 
       description: 'Bulk buyer for family and neighbors', 
       areas: 'Dinara and Dehri regions', 
       category: 'Custome' 
     },
     { 
-      src: 'https://www.shutterstock.com/image-photo/young-indian-farmer-dairy-farm-260nw-1836177133.jpg', 
-      title: 'Mahendra Singh', 
+      src: 'https://i.postimg.cc/PJNVC3tT/delhuan-dairy-kochas-11.jpg', 
+      title: 'Amit (Banti ) yadav', 
       description: 'Corporate order client for milk packets', 
       areas: 'Rohtas and industrial zone', 
       category: 'Custome' 
     },
     { 
-      src: 'https://media.assettype.com/newslaundry%2F2021-06%2Fa376fad8-c8e0-4a3d-b1bb-df224b8e19b3%2FAI_image.jpg?auto=format%2Ccompress&fit=max&dpr=1.0&format=webp&w=480', 
-      title: 'Karan Kumar', 
+      src: 'https://i.postimg.cc/4dWFNkTR/delhuan-dairy-kochas-4.jpg', 
+      title: 'Anil kumar (Sachiv JI)', 
       description: 'Event-based dairy orders for village functions', 
       areas: 'Delhuan and Kochas areas', 
       category: 'Custome' 
     },
     { 
-      src: 'https://img.freepik.com/premium-photo/rural-scene-indian-milkman-showing-money-his-farm_75648-7558.jpg', 
-      title: 'Shyam Prasad', 
+      src: 'https://i.postimg.cc/KzGH2cCS/delhuan-dairy-kochas-7.jpg', 
+      title: 'delhuan-dairy-Front', 
       description: 'Special request for buffalo milk daily', 
       areas: 'Delhuan and Sasaram outskirts', 
       category: 'Custome' 
     },
     { 
-      src: 'https://mla20yrfoj5x.i.optimole.com/cb:CQ-e.5ba07/w:1800/h:1200/q:90/f:best/sm:0/ig:avif/https://weanimals.org/wp-content/uploads/2024/01/WAM34881.jpg', 
+      src: 'https://i.postimg.cc/LXx06KMd/delhuan-dairy-kochas-6.jpg', 
+      title: 'Anish yadav', 
+      description: 'Home delivery customer since 2021', 
+      areas: 'Nearby villages – Dinara block', 
+      category: 'Custome' 
+    },
+    { 
+      src: 'https://i.postimg.cc/bJmFNcjr/delhuan-dairy-kochas-9.jpg', 
+      title: 'Delhuan-dairy-near-kochas', 
+      description: 'Home delivery customer since 2021', 
+      areas: 'Nearby villages – Dinara block', 
+      category: 'Custome' 
+    },
+    { 
+      src: 'https://i.postimg.cc/Zn0sW7T0/delhuan-dairy-kochas-12.jpg', 
       title: 'Manish kumar', 
+      description: 'Home delivery customer since 2021', 
+      areas: 'Nearby villages – Dinara block', 
+      category: 'Custome' 
+    }
+    ,{ 
+      src: 'https://i.postimg.cc/D0mpSj2G/delhuan-dairy-kochas-15.jpg', 
+      title: 'ShivMangle Singh ', 
+      description: 'Home delivery customer since 2021', 
+      areas: 'Nearby villages – Dinara block', 
+      category: 'Custome' 
+    }
+    ,{ 
+      src: 'https://i.postimg.cc/hj23PWqg/delhuan-dairy-kochas-8.jpg', 
+      title: 'Anish (_Anna ) kumar', 
+      description: 'Home delivery customer since 2021', 
+      areas: 'Nearby villages – Dinara block', 
+      category: 'Custome' 
+    }
+    ,{ 
+      src: 'https://i.postimg.cc/rszZDn8G/delhuan-dairy-kochas-14.jpg', 
+      title: 'Anish bhai ', 
       description: 'Home delivery customer since 2021', 
       areas: 'Nearby villages – Dinara block', 
       category: 'Custome' 
