@@ -106,13 +106,40 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
+            About us
+          </h1>
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
-            About Delhuan Dairy & Animal Care
+             Delhuan Dairy with Semen Processing
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             A premier dairy cooperative serving Delhuan village in Dinara Thana, committed to delivering
             fresh milk and comprehensive animal healthcare services.
           </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+<div className="p-4 border rounded-lg">
+<h3 className="font-semibold">Elite Bull Selection</h3>
+<p className="mt-2 text-sm text-gray-600">We select bulls with proven high milk yield lineage, strong fertility, disease-free certification and desirable genetic traits.</p>
+</div>
+
+
+<div className="p-4 border rounded-lg">
+<h3 className="font-semibold">Scientific Semen Collection</h3>
+<p className="mt-2 text-sm text-gray-600">Trained veterinarians and breeding experts perform hygienic and safe semen collection following SOPs.</p>
+</div>
+
+
+<div className="p-4 border rounded-lg">
+<h3 className="font-semibold">Semen Evaluation & Testing</h3>
+<p className="mt-2 text-sm text-gray-600">Every sample is evaluated for motility, morphology, concentration and progressive motility to ensure premium quality.</p>
+</div>
+
+
+<div className="p-4 border rounded-lg">
+<h3 className="font-semibold">Processing & Cryopreservation</h3>
+<p className="mt-2 text-sm text-gray-600">State-of-the-art dilution, straw filling and liquid nitrogen freezing for long-term storage.</p>
+</div>
+</div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -218,7 +245,7 @@ const AboutSection = () => {
               </button>
             </div>
           </div>
-        )}
+        )}  
       </div>
     </section>
   );

@@ -1,15 +1,16 @@
 import React from 'react';
 import { Facebook, Instagram, MessageCircle, Phone, Mail, MapPin, Milk, Award } from 'lucide-react';
 import logo from '@/assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const quickLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Products', href: '#products' },
-    { name: 'Milk Rate', href: '#milk-rate' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'About Us', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Products', href: '/products' },
+    { name: 'Milk Rate', href: '/milk-rate' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   const services = [
@@ -60,12 +61,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href} 
+                  <Link 
+                    to={link.href} 
                     className="text-sm opacity-90 hover:opacity-100 hover:text-accent transition-all duration-300"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

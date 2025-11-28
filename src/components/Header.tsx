@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Phone, MessageCircle, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.png';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,13 +19,13 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Products', href: '#products' },
-    { name: 'Milk Rate', href: '#milk-rate' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Products', href: '/products' },
+    { name: 'Milk Rate', href: '/milk-rate' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -33,7 +35,7 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => window.location.href = '#home'}>
+          <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => navigate('/')}>
             <img 
               src={logo} 
               alt="Delhuan Dairy" 
@@ -50,14 +52,14 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -85,7 +87,7 @@ const Header = () => {
             <Button 
               className="accent-gradient text-white font-medium px-6"
               size="sm"
-              onClick={() => window.location.href = '/login'}
+              onClick={() => navigate('/login')}
             >
               Login
             </Button>
@@ -107,14 +109,14 @@ const Header = () => {
           <div className="lg:hidden mt-4 py-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg animate-fade-up">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="px-4 py-2 text-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-300 rounded"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="flex flex-col space-y-2 px-4 pt-3 border-t border-border">
                 <Button 

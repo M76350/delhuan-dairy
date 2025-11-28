@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
@@ -16,6 +17,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 
 const Index = () => {
   const [showInquiryPopup, setShowInquiryPopup] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     // Show inquiry popup after 2 seconds when page loads for the first time
@@ -31,6 +33,21 @@ const Index = () => {
     // setShowInquiryPopup(true);
   }, []);
 
+  useEffect(() => {
+    const sectionId = location.pathname === '/' ? 'home' : location.pathname.replace('/', '');
+    if (sectionId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (sectionId) {
+      const sectionElement = document.getElementById(sectionId);
+      if (sectionElement) {
+        sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -41,7 +58,7 @@ const Index = () => {
       <ProductsSection />
       <LeadershipTeam />
       <LoyalCustomers />
-      <GallerySection />
+      {/* <GallerySection /> */}
       <ContactSection />
       <Footer />
       <ScrollToTop />
