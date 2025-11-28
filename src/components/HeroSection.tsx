@@ -11,18 +11,18 @@ const HeroSection = () => {
   const slides = [
     {
       image: heroImage1,
-      title: 'Premium Dairy Farm',
-      subtitle: 'Fresh Milk & Animal Care at Your Service'
+      title: 'Delhuan dairy farm ',
+      subtitle: 'delhuan dairy farm & milk collection center '
     },
     {
       image: heroImage2,
-      title: 'Modern Milk Collection',
-      subtitle: 'Digital Technology for Quality Assurance'
+      title: 'Top dairy farm in Rohtas',
+      subtitle: ' Also a global member of  sudh dairy plant a part from  ara'
     },
     {
       image: heroImage3,
-      title: 'Expert Animal Care',
-      subtitle: 'Professional Health Services for Your Livestock'
+      title: 'best Semen Processing &  Animal Care in rohtas',
+      subtitle: 'Professional Health Services for Your Livestock  Animals  '
     }
   ];
 
@@ -63,14 +63,14 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-poppins font-bold mb-6 animate-fade-up">
+        <h1 className="text-5xl capitalize md:text-7xl font-poppins font-bold mb-6 animate-fade-up">
           {slides[currentSlide].title}
         </h1>
         <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-up" style={{animationDelay: '0.2s'}}>
           {slides[currentSlide].subtitle}
         </p>
         <p className="text-lg mb-10 opacity-80 max-w-2xl mx-auto animate-fade-up" style={{animationDelay: '0.4s'}}>
-          Connected to Sudha Plant Kochas, Head Center Araa, Bihar - Serving Delhuan village with premium dairy services and animal care.
+          Connected to Sudha Plant Kochas, Head Center Araa, Bihar - Serving Delhuan village with Best  dairy services and  Best Animal care.
         </p>
 
         {/* Action Buttons */}
