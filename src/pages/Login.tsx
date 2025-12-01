@@ -10,10 +10,14 @@ import { useToast } from '@/components/ui/use-toast';
 import { otpService } from '@/lib/otpService';
 import { useNavigate } from 'react-router-dom';
 import logo from '@/assets/logo.png';
+import { useAuth } from '@/context/AuthContext';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { firebaseApp, isFirebaseConfigured } from '@/lib/firebase';
 
 const Login = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
+  const { login } = useAuth();
   
   const [loginData, setLoginData] = useState({
     identifier: '', // email or phone
@@ -53,6 +57,7 @@ const Login = () => {
   };
 
   const validateIdentifier = (identifier: string) => {
+    // allow either a valid email or a 10-digit mobile number
     return otpService.isValidEmail(identifier) || otpService.isValidMobile(identifier);
   };
 
@@ -61,8 +66,8 @@ const Login = () => {
     if (!validateIdentifier(loginData.identifier)) {
       toast({
         title: "Invalid Input",
-        description: "Please enter a valid email or mobile number",
-        variant: "destructive"
+        description: "Please enter a valid email or 10-digit mobile number.",
+        variant: "destructive",
       });
       return;
     }
@@ -98,8 +103,8 @@ const Login = () => {
     if (!validateIdentifier(signupData.identifier)) {
       toast({
         title: "Invalid Input",
-        description: "Please enter a valid email or mobile number",
-        variant: "destructive"
+        description: "Please enter a valid email or 10-digit mobile number.",
+        variant: "destructive",
       });
       return;
     }
@@ -138,14 +143,14 @@ const Login = () => {
       const isValid = otpService.verifyOTP(otpStep.identifier, otp);
       
       if (isValid) {
-        // Store user session
-        const userData = {
-          identifier: otpStep.identifier,
+        login({
+          id: otpStep.identifier,
           name: otpStep.userData?.name || 'User',
-          loginTime: new Date().toISOString()
-        };
-        localStorage.setItem('user', JSON.stringify(userData));
-        
+          email: otpService.isValidEmail(otpStep.identifier) ? otpStep.identifier : undefined,
+          phone: otpService.isValidMobile(otpStep.identifier) ? otpStep.identifier : undefined,
+          provider: 'otp',
+        });
+
         toast({
           title: "Success!",
           description: `${otpStep.type === 'login' ? 'Logged in' : 'Account created'} successfully`,
@@ -168,6 +173,49 @@ const Login = () => {
   const handleBackToForm = () => {
     setOtpStep({ show: false, identifier: '', type: 'login' });
     setOtp('');
+  };
+
+  const handleGoogleLogin = async () => {
+    if (!isFirebaseConfigured || !firebaseApp) {
+      toast({
+        title: "Google login not configured",
+        description: "Firebase credentials are missing. Please contact site admin.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      const auth = getAuth(firebaseApp);
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+
+      const gUser = result.user;
+      login({
+        id: gUser.uid,
+        name: gUser.displayName || "Google User",
+        email: gUser.email || undefined,
+        photoURL: gUser.photoURL || undefined,
+        provider: "google",
+      });
+
+      toast({
+        title: "Logged in with Google",
+        description: gUser.email || "Google account connected successfully",
+      });
+
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Google login failed",
+        description: "Unable to complete Google sign-in. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -296,6 +344,18 @@ const Login = () => {
                     >
                       {isLoading ? 'Sending OTP...' : 'Send OTP'}
                     </Button>
+
+                    <div className="mt-4">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="w-full flex items-center justify-center gap-2"
+                        onClick={handleGoogleLogin}
+                        disabled={isLoading}
+                      >
+                        <span className="font-medium">Continue with Google</span>
+                      </Button>
+                    </div>
                   </form>
                 </TabsContent>
 

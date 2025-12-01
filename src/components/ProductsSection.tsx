@@ -26,32 +26,46 @@ const ProductsSection = () => {
       name: 'Pure Cow Ghee',
       price: '₹480/500g',
       originalPrice: '₹520',
-      image: dairyProducts,
+      image: 'https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=1200',
       rating: 4.8,
       reviews: 156,
       features: ['100% Pure', 'Traditional Method', 'No Chemicals'],
-      bestseller: true
+      bestseller: true,
     },
     {
-      name: 'Fresh Paneer',
+      id: 'fresh-paneer',
+      name: 'Fresh Malai Paneer',
       price: '₹280/kg',
       originalPrice: '₹320',
-      image: dairyProducts,
+      image: 'https://images.pexels.com/photos/8478053/pexels-photo-8478053.jpeg?auto=compress&cs=tinysrgb&w=1200',
       rating: 4.7,
       reviews: 89,
       features: ['Daily Fresh', 'High Protein', 'Soft Texture'],
-      new: true
+      new: true,
     },
     {
-      name: 'Premium Butter',
+      id: 'premium-butter',
+      name: 'Premium Table Butter',
       price: '₹160/250g',
       originalPrice: '₹180',
-      image: dairyProducts,
+      image: 'https://images.pexels.com/photos/4109951/pexels-photo-4109951.jpeg?auto=compress&cs=tinysrgb&w=1200',
       rating: 4.6,
       reviews: 67,
-      features: ['Creamy', 'Unsalted', 'Fresh Daily']
+      features: ['Creamy', 'Unsalted', 'Fresh Daily'],
     },
     {
+      id: 'flavoured-curd',
+      name: 'Cultured Dahi (Curd)',
+      price: '₹70/500g',
+      originalPrice: '₹80',
+      image: 'https://images.pexels.com/photos/14386720/pexels-photo-14386720.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      rating: 4.7,
+      reviews: 112,
+      features: ['Thick Set', 'Probiotic Rich', 'Perfect for Meals'],
+      popular: true,
+    },
+    {
+      id: 'sudha-dana',
       name: 'Sudha Dana (Cattle Feed)',
       price: '₹45/kg',
       originalPrice: '₹50',
@@ -59,27 +73,49 @@ const ProductsSection = () => {
       rating: 4.9,
       reviews: 234,
       features: ['High Nutrition', 'Quality Assured', 'Bulk Available'],
-      popular: true
+      popular: true,
     },
     {
-      name: 'Calcium Powder',
+      id: 'calcium-powder',
+      name: 'Calcium & Mineral Mix',
       price: '₹120/kg',
       originalPrice: '₹140',
-      image: dairyProducts,
+      image: 'https://images.pexels.com/photos/4940916/pexels-photo-4940916.jpeg?auto=compress&cs=tinysrgb&w=1200',
       rating: 4.8,
       reviews: 45,
-      features: ['Veterinary Grade', 'Pure Calcium', 'Easy Dosage']
+      features: ['Veterinary Grade', 'Pure Calcium', 'Easy Dosage'],
     },
     {
-      name: 'Fresh Milk',
+      id: 'fresh-milk',
+      name: 'Farm Fresh Milk',
       price: '₹38/L',
       originalPrice: '₹42',
-      image: dairyProducts,
+      image: 'https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=1200',
       rating: 4.9,
       reviews: 567,
       features: ['Farm Fresh', 'Quality Tested', 'Home Delivery'],
-      bestseller: true
-    }
+      bestseller: true,
+    },
+    {
+      id: 'lassi',
+      name: 'Sweet Lassi',
+      price: '₹35/250ml',
+      originalPrice: '₹40',
+      image: 'https://images.pexels.com/photos/6542792/pexels-photo-6542792.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      rating: 4.5,
+      reviews: 62,
+      features: ['Chilled', 'Perfect for Summer', 'Made from Fresh Curd'],
+    },
+    {
+      id: 'khoa',
+      name: 'Traditional Khoa',
+      price: '₹360/kg',
+      originalPrice: '₹400',
+      image: 'https://images.pexels.com/photos/8478059/pexels-photo-8478059.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      rating: 4.6,
+      reviews: 74,
+      features: ['Slow Cooked', 'Ideal for Sweets', 'Rich Taste'],
+    },
   ];
 
   return (
@@ -104,9 +140,9 @@ const ProductsSection = () => {
           }
         `}
       </style>
-      <section id="products" className="py-20 bg-background">
+      <section id="products" data-animate="left" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-layout="left-text">
             <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
               Premium Dairy Products
             </h2>
@@ -116,7 +152,7 @@ const ProductsSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-layout="right-text">
             {products.map((product, index) => (
               <Card key={index} className="group hover-lift border-0 shadow-lg overflow-hidden">
                 <div className="relative">

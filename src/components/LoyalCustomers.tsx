@@ -73,9 +73,9 @@ const LoyalCustomers = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-r from-secondary/20 to-accent/10">
+    <section data-animate="left" className="py-20 bg-gradient-to-r from-secondary/20 to-accent/10">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16 animate-fade-in" data-layout="left-text">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <Users className="h-8 w-8 text-accent" />
             <h2 className="text-4xl font-poppins font-bold text-primary">

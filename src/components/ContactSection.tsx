@@ -22,17 +22,47 @@ const ContactSection = () => {
     });
   };
 
+  const isValidPhone = (phone: string) => {
+    const digits = phone.replace(/\D/g, '');
+    return digits.length === 10;
+  };
+
+  const isValidEmail = (email: string) => {
+    if (!email) return true; // optional field
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.name || !formData.phone || !formData.message) {
+      alert('Please fill all required fields (Name, Phone, Message).');
+      return;
+    }
+
+    if (!isValidPhone(formData.phone)) {
+      alert('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    if (!isValidEmail(formData.email)) {
+      alert('Please enter a valid email address.');
       return;
     }
 
     setLoading(true);
 
-    // Create WhatsApp message
+    // JSON payload for WhatsApp / email
+    const jsonPayload = JSON.stringify(formData, null, 2);
+
+    // Create WhatsApp message (JSON + readable text)
     const message = `📧 *Contact Form Submission*
+
+*JSON Data:*
+\`\`\`json
+${jsonPayload}
+\`\`\`
 
 👤 *Name:* ${formData.name}
 📱 *Phone:* ${formData.phone}
@@ -44,15 +74,24 @@ const ContactSection = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/917635065908?text=${encodedMessage}`;
 
-    // Simulate sending email data
-    console.log('Sending contact form to email:', {
-      to: 'manishkumar09112002@gmail.com',
-      subject: 'New Contact Form Submission',
-      data: formData
-    });
+    // Prepare email using mailto: so it opens in user's email client
+    const emailSubject = encodeURIComponent('New Contact Form Submission - Delhuan Dairy');
+    const emailBody = encodeURIComponent(
+      `You have a new enquiry from the website.
+      
+JSON Data:
+${jsonPayload}
 
-    // Open WhatsApp
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email || 'Not provided'}
+Message: ${formData.message}`
+    );
+    const mailtoUrl = `mailto:manishkumar09112002@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+    // Open WhatsApp and email client
     window.open(whatsappUrl, '_blank');
+    window.open(mailtoUrl, '_self');
 
     // Reset form
     setFormData({ name: '', email: '', phone: '', message: '' });
@@ -87,9 +126,9 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-secondary/20">
+    <section id="contact" data-animate="right" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-layout="left-text">
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
             Get In Touch
           </h2>
@@ -101,7 +140,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
           {/* Contact Information with Hover Effects */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6" data-layout="left-text">
             <Card className="shadow-lg border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader className="premium-gradient text-white">
                 <CardTitle className="text-xl font-poppins">Contact Information</CardTitle>
@@ -187,7 +226,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form and Map Section */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-8" data-layout="right-text">
             <Card className="shadow-lg border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-2xl font-poppins text-primary">Send us a Message</CardTitle>
@@ -210,7 +249,7 @@ const ContactSection = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number *</Label>
+                      <Label htmlFor="phone">Phone Number * (10-digit)</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -218,6 +257,7 @@ const ContactSection = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="Enter your phone number"
+                        maxLength={15}
                         required
                       />
                     </div>
@@ -282,8 +322,9 @@ const ContactSection = () => {
                 </p>
               </CardHeader>
               <CardContent className="p-0 overflow-hidden rounded-b-lg">
+             
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1970.7821920319245!2d83.99330449225273!3d25.264776949103762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d93dd6dd8bc41%3A0x6e9a1435ee05428d!2sSudha%20milk%20callection%20center!5e0!3m2!1sen!2sin!4v1754398175795!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d225.51230942594336!2d83.99255019828625!3d25.263959297749015!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d931570ef5ef3%3A0x42824ed7b27de539!2sdelhuan%20dairy%20farm%20milk%20collection!5e0!3m2!1sen!2sin!4v1764574298401!5m2!1sen!2sin"
                   width="100%"
                   height="450"
                   loading="lazy"

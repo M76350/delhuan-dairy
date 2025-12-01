@@ -46,11 +46,25 @@ const OrderPopup = ({ isOpen, onClose, product }: OrderPopupProps) => {
     }
   };
 
+  const isValidPhone = (phone: string) => {
+    const digits = phone.replace(/\D/g, '');
+    return digits.length === 10;
+  };
+
   const handleOrder = () => {
     if (!customerInfo.name || !customerInfo.phone || !customerInfo.address) {
       toast({
         title: "Error",
         description: "Please fill all required fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!isValidPhone(customerInfo.phone)) {
+      toast({
+        title: "Invalid Phone",
+        description: "Please enter a valid 10-digit mobile number.",
         variant: "destructive",
       });
       return;
@@ -173,7 +187,8 @@ const OrderPopup = ({ isOpen, onClose, product }: OrderPopupProps) => {
                 type="tel"
                 value={customerInfo.phone}
                 onChange={handleInputChange}
-                placeholder="Enter your phone number"
+                placeholder="Enter your 10-digit phone number"
+                maxLength={15}
                 required
               />
             </div>

@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, MessageCircle, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import logo from '@/assets/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '@/context/AuthContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { user, isAuthenticated } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,34 +66,37 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Action Buttons */}
+          {/* Action Buttons + Profile */}
           <div className="flex items-center space-x-3">
-            {/* <Button 
-              variant="outline" 
-              size="sm" 
-              className="hidden md:flex items-center space-x-2"
-              onClick={() => window.open('tel:+917635065908', '_self')}
-            >
-              <Phone className="h-4 w-4" />
-              <span>Call Now</span>
-            </Button> */}
-{/*             
-            <Button 
-              size="sm" 
-              className="hidden md:flex items-center space-x-2 premium-gradient text-white"
-              onClick={() => window.open('https://wa.me/917635065908', '_blank')}
-            >
-              <MessageCircle className="h-4 w-4" />
-              <span>WhatsApp</span>
-            </Button> */}
-
-            <Button 
-              className="accent-gradient text-white font-medium px-6"
-              size="sm"
-              onClick={() => navigate('/login')}
-            >
-              Login
-            </Button>
+            {isAuthenticated && user ? (
+              <button
+                className="flex items-center space-x-2 group"
+                onClick={() => navigate('/profile')}
+              >
+                <Avatar className="w-9 h-9 border border-accent shadow-sm">
+                  <AvatarImage src={user.photoURL} alt={user.name} />
+                  <AvatarFallback className="bg-accent text-xs font-semibold">
+                    {user.name
+                      .split(' ')
+                      .map((n) => n[0])
+                      .join('')
+                      .toUpperCase()
+                      .slice(0, 2)}
+                  </AvatarFallback>
+                </Avatar>
+                <span className="hidden md:block text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+                  {user.name || 'Profile'}
+                </span>
+              </button>
+            ) : (
+              <Button 
+                className="accent-gradient text-white font-medium px-6"
+                size="sm"
+                onClick={() => navigate('/login')}
+              >
+                Login
+              </Button>
+            )}
 
             {/* Mobile Menu Button */}
             <Button
