@@ -54,7 +54,8 @@ const Index = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen">
+    <div className="overflow-x-hidden">
+    <div className="min-h-screen ">
       <Header />
       <HeroSection
         id="home"
@@ -104,6 +105,7 @@ const Index = () => {
         isOpen={showInquiryPopup} 
         onClose={() => setShowInquiryPopup(false)} 
       />
+    </div>
     </div>
   );
 };

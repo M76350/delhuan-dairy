@@ -26,7 +26,7 @@ const contactChannels = [
 ];
 
 const ContactPage = () => (
-  <div className="min-h-screen bg-background">
+  <div className="min-h-screen bg-background ">
     <Header />
     <main>
       <HeroSection
