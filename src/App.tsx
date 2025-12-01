@@ -12,7 +12,8 @@ import ProductsPage from "./pages/Products";
 import MilkRatePage from "./pages/MilkRate";
 import GalleryPage from "./pages/Gallery";
 import ContactPage from "./pages/Contact";
-
+import ProfilePage from "./pages/Profile";
+import ScrollReveal from "./components/ScrollReveal";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollReveal />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutPage />} />
@@ -31,6 +33,7 @@ const App = () => (
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<ProfilePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

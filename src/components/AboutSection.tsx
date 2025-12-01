@@ -103,47 +103,47 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-secondary/30">
+    <section id="about" data-animate="left" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-layout="left-text">
           <h1 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
             About us
           </h1>
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
-             Delhuan Dairy with Semen Processing
+            Delhuan Dairy with Semen Processing
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             A premier dairy cooperative serving Delhuan village in Dinara Thana, committed to delivering
             fresh milk and comprehensive animal healthcare services.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-<div className="p-4 border rounded-lg">
-<h3 className="font-semibold">Elite Bull Selection</h3>
-<p className="mt-2 text-sm text-gray-600">We select bulls with proven high milk yield lineage, strong fertility, disease-free certification and desirable genetic traits.</p>
-</div>
+            <div className="p-4 border rounded-lg"  data-aos="fade-down-right">
+              <h3 className="font-semibold">Elite Bull Selection</h3>
+              <p className="mt-2 text-sm text-gray-600">We select bulls with proven high milk yield lineage, strong fertility, disease-free certification and desirable genetic traits.</p>
+            </div>
 
 
-<div className="p-4 border rounded-lg">
-<h3 className="font-semibold">Scientific Semen Collection</h3>
-<p className="mt-2 text-sm text-gray-600">Trained veterinarians and breeding experts perform hygienic and safe semen collection following SOPs.</p>
-</div>
+            <div className="p-4 border rounded-lg" data-aos="fade-down-left">
+              <h3 className="font-semibold">Scientific Semen Collection</h3>
+              <p className="mt-2 text-sm text-gray-600">Trained veterinarians and breeding experts perform hygienic and safe semen collection following SOPs.</p>
+            </div>
 
 
-<div className="p-4 border rounded-lg">
-<h3 className="font-semibold">Semen Evaluation & Testing</h3>
-<p className="mt-2 text-sm text-gray-600">Every sample is evaluated for motility, morphology, concentration and progressive motility to ensure premium quality.</p>
-</div>
+            <div className="p-4 border rounded-lg" data-aos="fade-down-right">
+              <h3 className="font-semibold">Semen Evaluation & Testing</h3>
+              <p className="mt-2 text-sm text-gray-600">Every sample is evaluated for motility, morphology, concentration and progressive motility to ensure premium quality.</p>
+            </div>
 
 
-<div className="p-4 border rounded-lg">
-<h3 className="font-semibold">Processing & Cryopreservation</h3>
-<p className="mt-2 text-sm text-gray-600">State-of-the-art dilution, straw filling and liquid nitrogen freezing for long-term storage.</p>
-</div>
-</div>
+            <div className="p-4 border rounded-lg">
+              <h3 className="font-semibold">Processing & Cryopreservation</h3>
+              <p className="mt-2 text-sm text-gray-600">State-of-the-art dilution, straw filling and liquid nitrogen freezing for long-term storage.</p>
+            </div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div className="space-y-6">
+          <div className="space-y-6" data-layout="left-text">
             <h3 className="text-3xl font-poppins font-semibold text-primary">Our Story</h3>
             <p className="text-muted-foreground leading-relaxed">
               Established in Delhuan village, Dinara Thana, our dairy cooperative has been a cornerstone
@@ -185,7 +185,7 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" data-layout="right-text">
             {features.map((feature, index) => (
               <Card key={index} className="hover-lift border-0 shadow-lg group">
                 <CardContent className="p-6 text-center">
@@ -245,7 +245,7 @@ const AboutSection = () => {
               </button>
             </div>
           </div>
-        )}  
+        )}
       </div>
     </section>
   );

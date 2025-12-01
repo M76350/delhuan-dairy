@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -7,6 +8,8 @@ import AboutSection from "@/components/AboutSection";
 import LeadershipTeam from "@/components/LeadershipTeam";
 import LoyalCustomers from "@/components/LoyalCustomers";
 import CustomerTestimonials from "@/components/CustomerTestimonials";
+import heroImage1 from "@/assets/hero-dairy-1.jpg";
+import heroImage2 from "@/assets/hero-dairy-2.jpg";
 
 const AboutPage = () => {
   const highlights = [
@@ -20,7 +23,26 @@ const AboutPage = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <section className="pt-32 pb-20 bg-gradient-to-b from-primary/10 via-background to-background">
+        <HeroSection
+          id="about-hero"
+          slides={[
+            {
+              image: heroImage1,
+              title: "About Delhuan Dairy",
+              subtitle: "From Delhuan village to homes across Rohtas & Bihar",
+            },
+            {
+              image: heroImage2,
+              title: "Farmer-first dairy model",
+              subtitle: "Transparent collection, fair payouts, and strong animal care",
+            },
+          ]}
+          eyebrow="About"
+          supportingText="15+ years of serving rural Bihar with honest pricing, quality testing, and community-focused dairy services."
+          heightClass="min-h-[70vh]"
+        />
+
+        <section className="pt-10 pb-20 bg-gradient-to-b from-primary/10 via-background to-background">
           <div className="max-w-6xl mx-auto px-4">
             <p className="text-xs uppercase tracking-[0.6em] text-primary mb-4">About Delhuan Dairy</p>
             <div className="grid gap-10 lg:grid-cols-2">

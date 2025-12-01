@@ -274,9 +274,9 @@ const GallerySection = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-background">
+    <section id="gallery" data-animate="left" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-layout="left-text">
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
             Our Gallery
           </h2>
@@ -286,7 +286,7 @@ const GallerySection = () => {
         </div>
 
         {/* Category Filter - All tab moved to end */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-12" data-layout="right-text">
           {categories.map((category) => (
             <Button
               key={category}
@@ -304,7 +304,7 @@ const GallerySection = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-layout="right-text">
           {filteredImages.map((image, index) => (
             <Card 
               key={index} 

@@ -110,9 +110,9 @@ const AnimalMedicalSection = () => {
   ];
 
   return (
-    <section id="medical-services" className="py-20 bg-secondary/10">
+    <section id="medical-services" data-animate="left" className="py-20 bg-secondary/10">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-up">
+        <div className="text-center mb-16 animate-fade-up" data-layout="left-text">
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
             Animal Medical Treatment Services
           </h2>
@@ -123,7 +123,7 @@ const AnimalMedicalSection = () => {
         </div>
 
         {/* Emergency Banner */}
-        <div className="bg-accent-dark/10 border border-accent-dark/20 rounded-xl p-6 mb-12 text-center animate-fade-left">
+        <div className="bg-accent-dark/10 border border-accent-dark/20 rounded-xl p-6 mb-12 text-center animate-fade-left" data-layout="right-text">
           <div className="flex items-center justify-center space-x-3 mb-3">
             <AlertTriangle className="h-6 w-6 text-accent-dark" />
             <h3 className="text-xl font-poppins font-semibold text-accent-dark">24/7 Emergency Service</h3>

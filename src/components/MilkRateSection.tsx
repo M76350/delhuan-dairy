@@ -47,9 +47,9 @@ const MilkRateSection = () => {
           }
         `}
       </style>
-      <section id="milk-rate" className="py-20 bg-secondary/20">
+      <section id="milk-rate" data-animate="right" className="py-20 bg-secondary/20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-layout="left-text">
             <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
               Current Milk Rates & Schedule
             </h2>
@@ -58,7 +58,7 @@ const MilkRateSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" data-layout="right-text">
             {/* Cow Milk Rates */}
             <Card className="shadow-lg border-0 group">
               <CardHeader className="premium-gradient text-white">

@@ -1,9 +1,11 @@
 import React from "react";
 import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import ScrollToTop from "@/components/ScrollToTop";
 import MilkRateSection from "@/components/MilkRateSection";
+import heroImage2 from "@/assets/hero-dairy-2.jpg";
 
 const assurancePillars = [
   { title: "Transparent payouts", detail: "Digital slips, instant SMS updates, and zero hidden deductions." },
@@ -15,7 +17,21 @@ const MilkRatePage = () => (
   <div className="min-h-screen bg-background">
     <Header />
     <main>
-      <section className="pt-32 pb-16 bg-gradient-to-b from-primary/15 via-background to-background">
+      <HeroSection
+        id="milk-rate-hero"
+        slides={[
+          {
+            image: heroImage2,
+            title: "Latest milk rates for Delhuan & nearby blocks",
+            subtitle: "Updated with Sudha guidelines and local demand",
+          },
+        ]}
+        eyebrow="Milk Rate"
+        supportingText="Transparent, farmer-friendly pricing with digital slips and on-time payouts."
+        heightClass="min-h-[70vh]"
+      />
+
+      <section className="pt-10 pb-16 bg-gradient-to-b from-primary/15 via-background to-background">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <p className="text-xs uppercase tracking-[0.6em] text-primary mb-4">Latest Milk Rates</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Fair pricing that rewards honest farming.</h1>

@@ -33,9 +33,9 @@ const LeadershipTeam = () => {
   ];
   
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-secondary/20">
+    <section data-animate="right" className="py-20 bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16 animate-fade-in" data-layout="left-text">
           <h2 className="text-4xl font-poppins font-bold text-primary mb-4">
             Leadership Team
           </h2>
@@ -44,7 +44,7 @@ const LeadershipTeam = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-layout="right-text">
           {leaders.map((leader, index) => (
             <Card
               key={index}

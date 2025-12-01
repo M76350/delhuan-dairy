@@ -64,9 +64,9 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" data-animate="right" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-layout="left-text">
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
             Our Premium Services
           </h2>
@@ -76,7 +76,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-layout="right-text">
           {services.map((service, index) => (
             <Card key={index} className="group hover-lift border-0 shadow-lg overflow-hidden">
               <CardHeader className={`${service.color === 'primary' ? 'premium-gradient' : 'accent-gradient'} text-white relative`}>

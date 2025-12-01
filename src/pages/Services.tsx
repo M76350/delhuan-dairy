@@ -1,11 +1,14 @@
 import React from "react";
 import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import ScrollToTop from "@/components/ScrollToTop";
 import ServicesSection from "@/components/ServicesSection";
 import AnimalMedicalSection from "@/components/AnimalMedicalSection";
 import CustomerTestimonials from "@/components/CustomerTestimonials";
+import heroImage2 from "@/assets/hero-dairy-2.jpg";
+import heroImage3 from "@/assets/hero-dairy-3.jpg";
 
 const ServicesPage = () => {
   const serviceHighlights = [
@@ -18,7 +21,26 @@ const ServicesPage = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <section className="pt-32 pb-16 bg-gradient-to-br from-primary/15 via-background to-background">
+        <HeroSection
+          id="services-hero"
+          slides={[
+            {
+              image: heroImage2,
+              title: "End-to-end dairy services",
+              subtitle: "Collection, chilling, logistics and payouts under one roof",
+            },
+            {
+              image: heroImage3,
+              title: "Animal medical care",
+              subtitle: "On-call vets, vaccination drives and nutrition planning",
+            },
+          ]}
+          eyebrow="Our Services"
+          supportingText="Designed for farmers, distributors and households to keep milk quality high and animal health strong."
+          heightClass="min-h-[70vh]"
+        />
+
+        <section className="pt-10 pb-16 bg-gradient-to-br from-primary/15 via-background to-background">
           <div className="max-w-6xl mx-auto px-4">
             <p className="text-xs uppercase tracking-[0.6em] text-primary mb-4">Our Services</p>
             <div className="grid gap-10 lg:grid-cols-2">

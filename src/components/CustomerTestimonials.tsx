@@ -94,9 +94,9 @@ const CustomerTestimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-primary/5">
+    <section id="testimonials" data-animate="right" className="py-20 bg-primary/5">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-up">
+        <div className="text-center mb-16 animate-fade-up" data-layout="left-text">
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
             हमारे वफादार ग्राहक
           </h2>
@@ -107,7 +107,7 @@ const CustomerTestimonials = () => {
         </div>
 
         {/* Main Testimonial Slider */}
-        <div className="relative max-w-4xl mx-auto mb-16">
+        <div className="relative max-w-4xl mx-auto mb-16" data-layout="right-text">
           <Card className="shadow-xl border-0 overflow-hidden animate-fade-left">
             <CardContent className="p-8 md:p-12">
               <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
