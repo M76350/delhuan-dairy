@@ -40,36 +40,4 @@
 .read-the-docs {
   color: #888;
 }
-.section {
-  position: relative;
-  overflow: hidden; /* ensures animated content stays inside */
-}.section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* mobile me center align */
-  gap: 1rem;
-}
-
-.text-content,
-.image-content {
-  flex: 1 1 100%; /* mobile full width */
-  max-width: 100%; /* screen ke width tak limit */
-}
-
-@media (min-width: 768px) {
-  .text-content,
-  .image-content {
-    flex: 1; /* side by side on desktop */
-    max-width: 500px;
-  }
-}@media (max-width: 768px) {
-  [data-aos="fade-left"],
-  [data-aos="fade-right"] {
-    transform: translateX(20px) !important; /* default 100px se kam */
-  }
-}html, body {
-  overflow-x: hidden;
-}
-html, body {
-  overflow-x: hidden;
-}
+/*  */
