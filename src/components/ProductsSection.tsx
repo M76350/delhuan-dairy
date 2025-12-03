@@ -3,7 +3,7 @@ import { ShoppingCart, Star, Truck, Award } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import dairyProducts from '@/assets/dairy-products.jpg';
+// import dairyProducts from '@/assets/dairy-products.jpg';
 import OrderPopup from '@/components/OrderPopup';
 
 const ProductsSection = () => {
@@ -22,33 +22,44 @@ const ProductsSection = () => {
 
   const products = [
     {
-      id: 'pure-cow-ghee',
-      name: 'Pure Cow Ghee',
-      price: '₹480/500g',
-      originalPrice: '₹520',
-      image: 'https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      id: 'pure-cow-milk',
+      name: 'Pure Cow milk',
+      price: '₹50 / Liter',
+      originalPrice: '₹60 / Liter',
+      image: 'https://i.postimg.cc/7LKZ22cP/delhuan-dairy-cow-milk.png',
       rating: 4.8,
       reviews: 156,
       features: ['100% Pure', 'Traditional Method', 'No Chemicals'],
       bestseller: true,
     },
     {
-      id: 'fresh-paneer',
-      name: 'Fresh Malai Paneer',
-      price: '₹280/kg',
-      originalPrice: '₹320',
-      image: 'https://images.pexels.com/photos/8478053/pexels-photo-8478053.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      id: 'pure-buffalo-Milk',
+      name: 'Pure Buffalo Milk',
+      price: '₹70 / Liter',
+      originalPrice: '₹80 / Liter',
+      image: 'https://i.postimg.cc/QMfdTTPh/delhuan-dairy-buffalo-milk.png',
+      rating: 4.8,
+      reviews: 156,
+      features: ['100% Pure', 'Traditional Method', 'No Chemicals'],
+      bestseller: true,
+    },
+    {
+      id: 'sudha-dana-cattle-feed',
+      name: 'sudha dana cattle feed',
+      price: '₹1350 / 50 kg',
+      originalPrice: '₹1400 / 50 kg',
+      image: 'https://i.postimg.cc/2SF6CJ7y/sudah_dana_daelhuan_dairy.png',
       rating: 4.7,
       reviews: 89,
-      features: ['Daily Fresh', 'High Protein', 'Soft Texture'],
+      features: ['High Nutrition', 'Quality Assured', 'Bulk Available'],
       new: true,
     },
     {
-      id: 'premium-butter',
-      name: 'Premium Table Butter',
-      price: '₹160/250g',
-      originalPrice: '₹180',
-      image: 'https://images.pexels.com/photos/4109951/pexels-photo-4109951.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      id: 'cow ghee',
+      name: 'Premium cow ghee',
+      price: '₹320/500g',
+      originalPrice: '₹360/500g',
+      image: 'https://i.postimg.cc/nVwrsQ5M/Gemini-Generated-Image-i63dp1i63dp1i63d.png',
       rating: 4.6,
       reviews: 67,
       features: ['Creamy', 'Unsalted', 'Fresh Daily'],
@@ -58,7 +69,7 @@ const ProductsSection = () => {
       name: 'Cultured Dahi (Curd)',
       price: '₹70/500g',
       originalPrice: '₹80',
-      image: 'https://images.pexels.com/photos/14386720/pexels-photo-14386720.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://i.postimg.cc/3x9xT42P/delhuandairy-curd-dahi-image.png',
       rating: 4.7,
       reviews: 112,
       features: ['Thick Set', 'Probiotic Rich', 'Perfect for Meals'],
@@ -69,7 +80,7 @@ const ProductsSection = () => {
       name: 'Sudha Dana (Cattle Feed)',
       price: '₹45/kg',
       originalPrice: '₹50',
-      image: dairyProducts,
+      image: 'https://i.postimg.cc/RZzh59KC/delhuandairyproduct.png',
       rating: 4.9,
       reviews: 234,
       features: ['High Nutrition', 'Quality Assured', 'Bulk Available'],
@@ -80,7 +91,7 @@ const ProductsSection = () => {
       name: 'Calcium & Mineral Mix',
       price: '₹120/kg',
       originalPrice: '₹140',
-      image: 'https://images.pexels.com/photos/4940916/pexels-photo-4940916.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://i.postimg.cc/4d3nL5t1/delhuan_dairy_farm.png',
       rating: 4.8,
       reviews: 45,
       features: ['Veterinary Grade', 'Pure Calcium', 'Easy Dosage'],
@@ -88,8 +99,8 @@ const ProductsSection = () => {
     {
       id: 'fresh-milk',
       name: 'Farm Fresh Milk',
-      price: '₹38/L',
-      originalPrice: '₹42',
+      price: '₹50/L',
+      originalPrice: '₹60/L',
       image: 'https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=1200',
       rating: 4.9,
       reviews: 567,
@@ -99,9 +110,9 @@ const ProductsSection = () => {
     {
       id: 'lassi',
       name: 'Sweet Lassi',
-      price: '₹35/250ml',
-      originalPrice: '₹40',
-      image: 'https://images.pexels.com/photos/6542792/pexels-photo-6542792.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      price: '₹35/500ml',
+      originalPrice: '₹40/500ml',
+      image: 'https://www.sudha.coop/wp-content/uploads/2020/11/MANGO-LASSI-200-ML-1.png',
       rating: 4.5,
       reviews: 62,
       features: ['Chilled', 'Perfect for Summer', 'Made from Fresh Curd'],
@@ -111,7 +122,7 @@ const ProductsSection = () => {
       name: 'Traditional Khoa',
       price: '₹360/kg',
       originalPrice: '₹400',
-      image: 'https://images.pexels.com/photos/8478059/pexels-photo-8478059.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinXDJ3gKijcwb7rIeRrYcNNYIw5q9sXfkiluL-lbnV1Nq5Oq9o7pucrBr1S0Mn9XUAkbvHbStLWW-7JSpgf6Y5bOF0r8SRw80SJKosyc8mTStg-WhU12FlAOv5TVVEbn_CR6BjTJcIxkdQ/s400/IMG_20170221_181830.jpg',
       rating: 4.6,
       reviews: 74,
       features: ['Slow Cooked', 'Ideal for Sweets', 'Rich Taste'],
@@ -159,7 +170,7 @@ const ProductsSection = () => {
                   <img 
                     src={product.image} 
                     alt={product.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-48 object-cover object-center  group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                     {product.bestseller && (
