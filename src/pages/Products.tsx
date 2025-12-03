@@ -23,18 +23,19 @@ const ProductsPage = () => {
           id="products-hero"
           slides={[
             {
-              image: dairyProducts,
+              // image: dairyProducts,
+              image:'https://i.postimg.cc/2SF6CJ7y/sudah_dana_daelhuan_dairy.png',
               title: "Premium dairy from Delhuan",
               subtitle: "Milk, ghee, paneer, butter and more for homes & businesses",
             },
           ]}
           eyebrow="Our Products"
           supportingText="Crafted in Delhuan and supplied across Bihar with strict cold-chain and quality checks."
-          heightClass="min-h-[70vh]"
+          heightClass="min-h-[90vh]"
         />
 
         <section className="pt-10 pb-16 bg-gradient-to-tr from-accent/15 via-background to-background">
-          <div className="max-w-6xl mx-auto px-4">
+          <div className="max-w-6xl mx-auto px-4  ">
             <p className="text-xs uppercase tracking-[0.5em] text-accent mb-4">Our Products</p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Crafted in Delhuan, delivered across Bihar.</h1>
             <p className="text-muted-foreground text-lg max-w-3xl">
