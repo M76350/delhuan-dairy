@@ -15,7 +15,7 @@ const contactChannels = [
   },
   {
     title: "Call & WhatsApp",
-    detail: "+91 76350 65908 / +91 76350 65909",
+    detail: "+91 76350 65908",
     cta: "Support for orders, logistics, and farming queries"
   },
   {
@@ -46,7 +46,7 @@ const ContactPage = () => (
       <section className="pt-10 pb-16 bg-gradient-to-b from-primary/10 via-background to-background">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <p className="text-xs uppercase tracking-[0.6em] text-primary mb-4">Contact</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">We respond faster than morning milk runs.</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 capitalize">let's connect with delhuan dairy farm</h1>
           <p className="text-muted-foreground text-lg">
             Reach out for wholesale supply, animal care, collection-center support, or community programs. Our
             coordinators are available on phone, WhatsApp, and email throughout the week.

@@ -2,6 +2,7 @@ import React from 'react';
 import { Facebook, Instagram, MessageCircle, Phone, Mail, MapPin, Milk, Award } from 'lucide-react';
 import logo from '@/assets/logo.png';
 import { Link } from 'react-router-dom';
+import './footer.css';
 
 const Footer = () => {
   const quickLinks = [
@@ -151,7 +152,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between text-sm opacity-80">
+            <div>
             <p>&copy; 2024 Delhuan Dairy & Animal Care. All rights reserved.</p>
+            <p className='copyright-text underline'>&copy; Designed and Developed by <a className='underline text-md  copyright-text' href="https://www.linkedin.com/in/manish-kumar0911/" target="_blank" rel="noopener noreferrer">Manish Kumar</a></p>
+            </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
