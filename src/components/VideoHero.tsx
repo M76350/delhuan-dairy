@@ -10,7 +10,7 @@ export default function VideoHero() {
     <section className="relative h-screen w-full overflow-hidden bg-black">
       {/* Poster Image */}
       <img
-        src="/public/new-year-delhuan.png"
+        src="/new-year-delhuan.png"
         alt="Happy New Year"
         className={`absolute inset-0 z-0 h-full w-full object-contain transition-opacity duration-700 ${
           videoLoaded ? "opacity-0" : "opacity-100"
@@ -22,7 +22,7 @@ export default function VideoHero() {
         className={`absolute inset-0 z-0 h-full w-full object-contain transition-opacity duration-700 ${
           videoLoaded ? "opacity-100" : "opacity-0"
         }`}
-        src="/public/delhuan-happy-new-year.mp4"
+        src="/delhuan-happy-new-year.mp4"
         autoPlay
         muted
         loop
