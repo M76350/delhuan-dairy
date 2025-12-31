@@ -18,7 +18,10 @@ import ScrollToTop from '@/components/ScrollToTop';
 import heroImage1 from '@/assets/hero-dairy-1.jpg';
 import heroImage2 from '@/assets/hero-dairy-2.jpg';
 import heroImage3 from '@/assets/hero-dairy-3.jpg';
+import heroImage4 from '@/assets/delhuan-happy-new-year.png';
+import heroImage5 from '@/assets/delhuan-village.png';
 import { Button } from '@/components/ui/button';
+import VideoHero from '@/components/VideoHero';
 
 const Index = () => {
   const [showInquiryPopup, setShowInquiryPopup] = useState(false);
@@ -57,12 +60,13 @@ const Index = () => {
     <div className="overflow-x-hidden">
     <div className="min-h-screen ">
       <Header />
+      <VideoHero   />
       <HeroSection
         id="home"
         slides={[
           {
-            image: heroImage1,
-            title: 'Delhuan dairy farm',
+            image: heroImage4,
+            title: '2026 Delhuan dairy farm',
             subtitle: 'Delhuan dairy farm & milk collection center',
           },
           {
@@ -74,6 +78,11 @@ const Index = () => {
             image: heroImage3,
             title: 'Best animal care in Rohtas',
             subtitle: 'Professional semen processing & veterinary services',
+          },
+          {
+            image: heroImage1,
+            title: 'Happy new year 2026',
+            subtitle: 'Delhuan dairy farm is wising you a very happy new to all of you ',
           },
         ]}
         supportingText="Connected to Sudha Plant Kochas, Head Center Ara, Bihar - serving Delhuan village with premium dairy services and attentive animal care."
