@@ -21,7 +21,6 @@ import heroImage3 from '@/assets/hero-dairy-3.jpg';
 import heroImage4 from '@/assets/delhuan-happy-new-year.png';
 import heroImage5 from '@/assets/delhuan-village.png';
 import { Button } from '@/components/ui/button';
-import VideoHero from '@/components/VideoHero';
 
 const Index = () => {
   const [showInquiryPopup, setShowInquiryPopup] = useState(false);
@@ -60,7 +59,6 @@ const Index = () => {
     <div className="overflow-x-hidden">
     <div className="min-h-screen ">
       <Header />
-      <VideoHero   />
       <HeroSection
         id="home"
         slides={[
@@ -99,12 +97,12 @@ const Index = () => {
         heightClass="h-screen"
         showScrollIndicator
       />
-      <AboutSection />
-      <ServicesSection />
+      {/* <AboutSection /> */}
+      {/* <ServicesSection /> */}
       <MilkRateSection />
       <ProductsSection />
       <LeadershipTeam />
-      <LoyalCustomers />
+      {/* <LoyalCustomers /> */}
       {/* <GallerySection /> */}
       <ContactSection />
       <Footer />
