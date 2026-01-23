@@ -18,7 +18,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import heroImage1 from '@/assets/hero-dairy-1.jpg';
 import heroImage2 from '@/assets/hero-dairy-2.jpg';
 import heroImage3 from '@/assets/hero-dairy-3.jpg';
-import heroImage4 from '@/assets/delhuan-happy-new-year.png';
+// import heroImage4 from '@/assets/delhuan-happy-new-year.png';
 import heroImage5 from '@/assets/delhuan-village.png';
 import { Button } from '@/components/ui/button';
 
@@ -62,11 +62,11 @@ const Index = () => {
       <HeroSection
         id="home"
         slides={[
-          {
-            image: heroImage4,
-            title: '2026 Delhuan dairy farm',
-            subtitle: 'Delhuan dairy farm & milk collection center',
-          },
+          // {
+          //   image: heroImage4,
+          //   title: '2026 Delhuan dairy farm',
+          //   subtitle: 'Delhuan dairy farm & milk collection center',
+          // },
           {
             image: heroImage2,
             title: 'Top dairy farm in Rohtas',
