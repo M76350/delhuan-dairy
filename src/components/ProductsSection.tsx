@@ -158,7 +158,7 @@ const ProductsSection = () => {
               Premium Dairy Products
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Fresh, high-quality dairy products and cattle feed delivered right to your doorstep 
+              Fresh, high-quality dairy products and cattle feed delivered right to your doorstep
               with the guarantee of purity and excellence.
             </p>
           </div>
@@ -167,8 +167,8 @@ const ProductsSection = () => {
             {products.map((product, index) => (
               <Card key={index} className="group hover-lift border-0 shadow-lg overflow-hidden">
                 <div className="relative">
-                  <img 
-                    src={product.image} 
+                  <img
+                    src={product.image}
                     alt={product.name}
                     className="w-full h-48 object-cover object-center  group-hover:scale-105 transition-transform duration-300"
                   />
@@ -198,7 +198,7 @@ const ProductsSection = () => {
                   <h3 className="text-xl font-poppins font-semibold text-primary mb-2">
                     {product.name}
                   </h3>
-                  
+
                   <div className="flex items-center space-x-2 mb-3">
                     <span className="text-2xl font-bold text-accent-dark">{product.price}</span>
                     <span className="text-sm text-muted-foreground line-through">{product.originalPrice}</span>
@@ -220,24 +220,24 @@ const ProductsSection = () => {
                   </div>
 
                   <div className="flex space-x-2">
-                    <Button 
+                    <Button
                       className="flex-1 premium-gradient text-white group"
                       size="sm"
                       onClick={() => handleOrderClick(product)}
                     >
-                      <ShoppingCart 
-                        className="w-4 h-4 mr-2 group-hover:animate-wobble" 
+                      <ShoppingCart
+                        className="w-4 h-4 mr-2 group-hover:animate-wobble"
                         aria-hidden="true"
                       />
                       Order Now
                     </Button>
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       size="sm"
                       className="px-3 group"
                     >
-                      <Truck 
-                        className="w-4 h-4 group-hover:animate-wobble" 
+                      <Truck
+                        className="w-4 h-4 group-hover:animate-wobble"
                         aria-hidden="true"
                       />
                     </Button>
@@ -250,8 +250,8 @@ const ProductsSection = () => {
           {/* Features Section */}
           <div className="mt-16 grid md:grid-cols-4 gap-6">
             <div className="text-center p-6 bg-card rounded-lg shadow-sm group hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ">
-              <Truck 
-                className="w-12 h-12 text-primary mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x" 
+              <Truck
+                className="w-12 h-12 text-primary mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x"
                 aria-hidden="true"
               />
               <h4 className="font-semibold text-primary mb-2 group-hover:text-accent-dark transition-colors duration-300">
@@ -260,8 +260,8 @@ const ProductsSection = () => {
               <p className="text-sm text-muted-foreground">On orders above ₹500</p>
             </div>
             <div className="text-center p-6 bg-card rounded-lg shadow-sm group hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ">
-              <Award 
-                className="w-12 h-12 text-accent-dark mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x" 
+              <Award
+                className="w-12 h-12 text-accent-dark mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x"
                 aria-hidden="true"
               />
               <h4 className="font-semibold text-primary mb-2 group-hover:text-accent-dark transition-colors duration-300">
@@ -270,8 +270,8 @@ const ProductsSection = () => {
               <p className="text-sm text-muted-foreground">100% pure products</p>
             </div>
             <div className="text-center p-6 bg-card rounded-lg shadow-sm group hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ">
-              <Star 
-                className="w-12 h-12 text-primary mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x" 
+              <Star
+                className="w-12 h-12 text-primary mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x"
                 aria-hidden="true"
               />
               <h4 className="font-semibold text-primary mb-2 group-hover:text-accent-dark transition-colors duration-300">
@@ -280,8 +280,8 @@ const ProductsSection = () => {
               <p className="text-sm text-muted-foreground">4.8+ average rating</p>
             </div>
             <div className="text-center p-6 bg-card rounded-lg shadow-sm group hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ">
-              <ShoppingCart 
-                className="w-12 h-12 text-accent-dark mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x" 
+              <ShoppingCart
+                className="w-12 h-12 text-accent-dark mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x"
                 aria-hidden="true"
               />
               <h4 className="font-semibold text-primary mb-2 group-hover:text-accent-dark transition-colors duration-300">

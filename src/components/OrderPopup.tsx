@@ -27,7 +27,7 @@ const OrderPopup = ({ isOpen, onClose, product }: OrderPopupProps) => {
     phone: '',
     address: ''
   });
-  
+
   const { toast } = useToast();
   const popupRef = useClickOutside({ isOpen, onClose });
 
@@ -95,10 +95,10 @@ const OrderPopup = ({ isOpen, onClose, product }: OrderPopupProps) => {
 
     const encodedMessage = encodeURIComponent(orderMessage);
     const whatsappUrl = `https://wa.me/917635065908?text=${encodedMessage}`;
-    
+
     // Open WhatsApp
     window.open(whatsappUrl, '_blank');
-    
+
     toast({
       title: "Order Placed!",
       description: "Your order has been sent via WhatsApp. We'll confirm shortly!",
@@ -115,7 +115,7 @@ const OrderPopup = ({ isOpen, onClose, product }: OrderPopupProps) => {
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <Card ref={popupRef} className="w-full max-w-md mx-auto animate-scale-in">
-        <CardHeader className="premium-gradient text-white relative">
+        <CardHeader className="premium-gradient text-white relative rounded-lg">
           <Button
             variant="ghost"
             size="sm"
@@ -129,7 +129,7 @@ const OrderPopup = ({ isOpen, onClose, product }: OrderPopupProps) => {
             Place Order
           </CardTitle>
         </CardHeader>
-        
+
         <CardContent className="p-6">
           {/* Product Details */}
           <div className="mb-6 p-4 bg-secondary/20 rounded-lg">
@@ -206,7 +206,7 @@ const OrderPopup = ({ isOpen, onClose, product }: OrderPopupProps) => {
             </div>
           </div>
 
-          <Button 
+          <Button
             onClick={handleOrder}
             className="w-full mt-6 premium-gradient text-white"
             size="lg"
@@ -216,7 +216,7 @@ const OrderPopup = ({ isOpen, onClose, product }: OrderPopupProps) => {
           </Button>
 
           <div className="mt-4 text-center text-sm text-muted-foreground">
-            <p>📱 Order support: +91 7635065908</p>
+            <p>📱 Order support:</p>
           </div>
         </CardContent>
       </Card>
