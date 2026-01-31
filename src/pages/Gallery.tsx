@@ -9,7 +9,7 @@ import LoyalCustomers from "@/components/LoyalCustomers";
 import heroImage1 from "@/assets/hero-dairy-1.jpg";
 
 const GalleryPage = () => (
-  <div className="min-h-screen bg-background ">
+  <div className="min-h-screen bg-background  overflow-x-hidden ">
     <Header />
     <main>
       <HeroSection
