@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import ContactForm from './ContactForm';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -78,7 +79,7 @@ ${jsonPayload}
     const emailSubject = encodeURIComponent('New Contact Form Submission - Delhuan Dairy');
     const emailBody = encodeURIComponent(
       `You have a new enquiry from the website.
-      
+
 JSON Data:
 ${jsonPayload}
 
@@ -225,93 +226,11 @@ Message: ${formData.message}`
             </div>
           </div>
 
+
           {/* Contact Form and Map Section */}
           <div className="lg:col-span-2 space-y-8" data-layout="right-text">
-            <Card className="shadow-lg border-0 hover:shadow-xl transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl font-poppins text-primary">Send us a Message</CardTitle>
-                <p className="text-muted-foreground">
-                  Fill out the form below and we'll get back to you as soon as possible.
-                </p>
-              </CardHeader>
-              <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Enter your full name"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number * (10-digit)</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="Enter your phone number"
-                        maxLength={15}
-                        required
-                      />
-                    </div>
-                  </div>
+          <ContactForm />
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell us about your inquiry..."
-                      rows={6}
-                      required
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full premium-gradient text-white hover:opacity-90 transition-opacity duration-300"
-                    disabled={loading}
-                  >
-                    {loading ? (
-                      <span className="flex items-center justify-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Sending...
-                      </span>
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-5 w-5" />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
 
             {/* Map Section */}
             <Card className="shadow-lg border-0 hover:shadow-xl transition-all duration-300">
@@ -322,7 +241,7 @@ Message: ${formData.message}`
                 </p>
               </CardHeader>
               <CardContent className="p-0 overflow-hidden rounded-b-lg">
-             
+
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d225.51230942594336!2d83.99255019828625!3d25.263959297749015!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d931570ef5ef3%3A0x42824ed7b27de539!2sdelhuan%20dairy%20farm%20milk%20collection!5e0!3m2!1sen!2sin!4v1764574298401!5m2!1sen!2sin"
                   width="100%"
