@@ -6,19 +6,19 @@ import AnimatedCounter from '@/components/AnimatedCounter';
 
 const MilkRateSection = () => {
   const milkRates = [
-    { fatContent: '3.0%', rate: '₹32', quality: 'Standard' },
-    { fatContent: '3.5%', rate: '₹35', quality: 'Good', popular: true },
-    { fatContent: '4.0%', rate: '₹38', quality: 'Premium' },
-    { fatContent: '4.5%', rate: '₹41', quality: 'Super Premium' },
-    { fatContent: '5.0%+', rate: '₹45', quality: 'Excellent' }
+    { fatContent: '3.0%',   rate: '₹37',  quality: 'Standard' },
+    { fatContent: '3.5%',   rate: '₹40',  quality: 'Good', popular: true },
+    { fatContent: '4.0%',   rate: '₹43',  quality: 'Premium' },
+    { fatContent: '4.5%',   rate: '₹46',  quality: 'Super Premium' },
+    { fatContent: '5.0%+',  rate: '₹50',  quality: 'Excellent' }
   ];
 
   const buffaloMilkRates = [
-    { fatContent: '5.0%', rate: '₹48', quality: 'Standard' },
-    { fatContent: '5.5%', rate: '₹51', quality: 'Good', popular: true },
-    { fatContent: '6.0%', rate: '₹54', quality: 'Premium' },
-    { fatContent: '6.5%', rate: '₹57', quality: 'Super Premium' },
-    { fatContent: '7.0%+', rate: '₹60', quality: 'Excellent' }
+    { fatContent: '5.0%',   rate: '₹53',  quality: 'Standard' },
+    { fatContent: '5.5%',   rate: '₹56',  quality: 'Good', popular: true },
+    { fatContent: '6.0%',   rate: '₹59',  quality: 'Premium' },
+    { fatContent: '6.5%',   rate: '₹62',  quality: 'Super Premium' },
+    { fatContent: '7.0%+',  rate: '₹65',  quality: 'Excellent' }
   ];
 
   const schedule = [
@@ -63,8 +63,8 @@ const MilkRateSection = () => {
             <Card className="shadow-lg border-0 group">
               <CardHeader className="premium-gradient text-white">
                 <CardTitle className="flex items-center text-2xl font-poppins">
-                  <TrendingUp 
-                    className="mr-3 h-6 w-6 transform transition-transform duration-500 ease-in-out group-hover:rotate-y-180" 
+                  <TrendingUp
+                    className="mr-3 h-6 w-6 transform transition-transform duration-500 ease-in-out group-hover:rotate-y-180"
                     aria-hidden="true"
                   />
                   Cow Milk Rates
@@ -74,8 +74,8 @@ const MilkRateSection = () => {
               <CardContent className="p-0">
                 <div className="space-y-0">
                   {milkRates.map((rate, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className={`flex items-center justify-between p-6 border-b border-border last:border-b-0 hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ${
                         rate.popular ? 'bg-accent/10' : ''
                       }`}
@@ -94,9 +94,9 @@ const MilkRateSection = () => {
                       </div>
                       <div className="text-right">
                         <div className="text-3xl font-bold text-accent-dark">
-                          <AnimatedCounter 
-                            end={parseInt(rate.rate.replace('₹', ''))} 
-                            prefix="₹" 
+                          <AnimatedCounter
+                            end={parseInt(rate.rate.replace('₹', ''))}
+                            prefix="₹"
                             duration={1500}
                             className="inline"
                             aria-live="polite"
@@ -107,10 +107,10 @@ const MilkRateSection = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="p-6 bg-muted/30">
                   <p className="text-sm text-muted-foreground">
-                    <strong>Note:</strong> Rates are subject to daily market fluctuations. 
+                    <strong>Note:</strong> Rates are subject to daily market fluctuations.
                     Final pricing is determined at the time of collection based on quality testing.
                   </p>
                 </div>
@@ -121,8 +121,8 @@ const MilkRateSection = () => {
             <Card className="shadow-lg border-0 group">
               <CardHeader className="accent-gradient text-black">
                 <CardTitle className="flex items-center text-2xl font-poppins">
-                  <TrendingUp 
-                    className="mr-3 h-6 w-6 transform transition-transform duration-500 ease-in-out group-hover:rotate-y-180" 
+                  <TrendingUp
+                    className="mr-3 h-6 w-6 transform transition-transform duration-500 ease-in-out group-hover:rotate-y-180"
                     aria-hidden="true"
                   />
                   Buffalo Milk Rates
@@ -132,8 +132,8 @@ const MilkRateSection = () => {
               <CardContent className="p-0">
                 <div className="space-y-0">
                   {buffaloMilkRates.map((rate, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className={`flex items-center justify-between p-6 border-b border-border last:border-b-0 hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ${
                         rate.popular ? 'bg-accent/10' : ''
                       }`}
@@ -152,9 +152,9 @@ const MilkRateSection = () => {
                       </div>
                       <div className="text-right">
                         <div className="text-3xl font-bold text-accent-dark">
-                          <AnimatedCounter 
-                            end={parseInt(rate.rate.replace('₹', ''))} 
-                            prefix="₹" 
+                          <AnimatedCounter
+                            end={parseInt(rate.rate.replace('₹', ''))}
+                            prefix="₹"
                             duration={1500}
                             className="inline"
                             aria-live="polite"
@@ -165,10 +165,10 @@ const MilkRateSection = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="p-6 bg-muted/30">
                   <p className="text-sm text-muted-foreground">
-                    <strong>Note:</strong> Rates are subject to daily market fluctuations. 
+                    <strong>Note:</strong> Rates are subject to daily market fluctuations.
                     Final pricing is determined at the time of collection based on quality testing.
                   </p>
                 </div>
@@ -180,8 +180,8 @@ const MilkRateSection = () => {
               <Card className="shadow-lg border-0 group">
                 <CardHeader className="accent-gradient text-black">
                   <CardTitle className="flex items-center text-2xl font-poppins">
-                    <Clock 
-                      className="mr-3 h-6 w-6 transform transition-transform duration-500 ease-in-out group-hover:rotate-y-180" 
+                    <Clock
+                      className="mr-3 h-6 w-6 transform transition-transform duration-500 ease-in-out group-hover:rotate-y-180"
                       aria-hidden="true"
                     />
                     Collection Schedule
@@ -191,8 +191,8 @@ const MilkRateSection = () => {
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     {schedule.map((item, index) => (
-                      <div 
-                        key={index} 
+                      <div
+                        key={index}
                         className="flex items-center justify-between p-4 bg-secondary/50 rounded-lg hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300"
                       >
                         <div>
@@ -214,8 +214,8 @@ const MilkRateSection = () => {
               <Card className="shadow-lg border-0 group">
                 <CardHeader>
                   <CardTitle className="flex items-center text-xl font-poppins text-primary">
-                    <Calendar 
-                      className="mr-3 h-5 w-5 transform transition-transform duration-500 ease-in-out group-hover:rotate-y-180" 
+                    <Calendar
+                      className="mr-3 h-5 w-5 transform transition-transform duration-500 ease-in-out group-hover:rotate-y-180"
                       aria-hidden="true"
                     />
                     Important Information
@@ -251,8 +251,8 @@ const MilkRateSection = () => {
           {/* Rate Update Notice */}
           <div className="mt-12 text-center">
             <div className="inline-flex items-center space-x-2 bg-[#0f3520] text-accent-dark px-6 py-3 rounded-full animate-pulse-scale-x">
-              <TrendingUp 
-                className="h-5 w-5 animate-pulse-scale" 
+              <TrendingUp
+                className="h-5 w-5 animate-pulse-scale"
                 aria-hidden="true"
               />
               <span className="font-medium">Rates updated daily at 6:00 AM</span>
