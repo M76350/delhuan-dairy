@@ -16,7 +16,7 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -28,6 +28,7 @@ const Header = () => {
     { name: 'Products', href: '/products' },
     { name: 'Milk Rate', href: '/milk-rate' },
     { name: 'Gallery', href: '/gallery' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -39,10 +40,10 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => navigate('/')}>
-            <img 
-              src={logo} 
-              alt="Delhuan Dairy" 
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-110" 
+            <img
+              src={logo}
+              alt="Delhuan Dairy"
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-110"
             />
             <div className="hidden sm:block">
               <h1 className="text-xl font-poppins font-bold text-primary group-hover:text-accent transition-colors duration-300">
@@ -89,7 +90,7 @@ const Header = () => {
                 </span>
               </button>
             ) : (
-              <Button 
+              <Button
                 className="accent-gradient text-white font-medium px-6"
                 size="sm"
                 onClick={() => navigate('/login')}
@@ -125,17 +126,17 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 px-4 pt-3 border-t border-border">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   className="flex items-center justify-center space-x-2"
                   onClick={() => window.open('tel:+917635065908', '_self')}
                 >
                   <Phone className="h-4 w-4" />
                   <span>Call Now</span>
                 </Button>
-                <Button 
-                  size="sm" 
+                <Button
+                  size="sm"
                   className="flex items-center justify-center space-x-2 premium-gradient text-white"
                   onClick={() => window.open('https://wa.me/917635065908', '_blank')}
                 >

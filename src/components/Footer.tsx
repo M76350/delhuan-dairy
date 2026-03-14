@@ -36,13 +36,13 @@ const Footer = () => {
                 <p className="text-sm opacity-90">& Animal Care</p>
               </div>
             </div>
-            
+
             <p className="text-sm opacity-90 leading-relaxed mb-6">
-              Premier dairy cooperative serving Delhuan village with fresh milk collection, 
-              animal healthcare, and quality dairy products. Connected to Sudha Plant Kochas 
+              Premier dairy cooperative serving Delhuan village with fresh milk collection,
+              animal healthcare, and quality dairy products. Connected to Sudha Plant Kochas
               network for reliable service.
             </p>
-            
+
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
                 <Facebook className="h-5 w-5" />
@@ -62,8 +62,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <Link 
-                    to={link.href} 
+                  <Link
+                    to={link.href}
                     className="text-sm opacity-90 hover:opacity-100 hover:text-accent transition-all duration-300"
                   >
                     {link.name}
@@ -97,7 +97,7 @@ const Footer = () => {
                   <p>Dinara,802213, Bihar</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-accent" />
                 <div className="text-sm opacity-90">
@@ -105,7 +105,7 @@ const Footer = () => {
                   {/* <p>call</p> */}
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-accent" />
                 <div className="text-sm opacity-90">
@@ -135,7 +135,7 @@ const Footer = () => {
                 <p className="text-sm opacity-80">Head Center Araa, Bihar</p>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-6 text-sm opacity-90">
               <div className="flex items-center space-x-2">
                 <Milk className="h-4 w-4 text-accent" />
@@ -157,9 +157,9 @@ const Footer = () => {
             <p className='copyright-text underline'>&copy; Designed and Developed by <a className='underline text-md  copyright-text' href="https://www.linkedin.com/in/manish-kumar0911/" target="_blank" rel="noopener noreferrer">Manish Kumar</a></p>
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-accent transition-colors">Disclaimer</a>
+              <Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-accent transition-colors">Terms of Service</Link>
+              <Link to="/disclaimer" className="hover:text-accent transition-colors">Disclaimer</Link>
             </div>
           </div>
         </div>
