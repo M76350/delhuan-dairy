@@ -20,12 +20,13 @@ export default function BlogPost() {
       <main className="container mx-auto px-4 pt-28 pb-16">
         <div className="max-w-7xl mx-auto">
           {/* Breadcrumb */}
-          <div className="text-sm text-muted-foreground">
-            <Link to="/blog" className="hover:underline text-primary">
+          <p className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-medium text-gray-700">
+            <Link to="/blog" className="text-primary hover:underline">
               Blog
             </Link>{" "}
             / {post ? post.title : "Post not found"}
-          </div>
+          </p>
+
 
           {/* Navigation Buttons */}
           <div className="mt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -141,17 +142,17 @@ export default function BlogPost() {
 
                           {/* Text */}
                           <div className="w-[70%]">
-                          <h3 className="text-sm font-semibold text-foreground">
-                          <Link
-                            to={`/blog/${rp.slug}`}
-                            className="hover:text-primary transition-colors"
-                          >
-                            {rp.title}
-                          </Link>
-                        </h3>
-                          <p className=" text-xs text-muted-foreground line-clamp-3">
-                            {rp.description}
-                          </p>
+                            <h3 className="text-sm font-semibold text-foreground">
+                              <Link
+                                to={`/blog/${rp.slug}`}
+                                className="hover:text-primary transition-colors"
+                              >
+                                {rp.title}
+                              </Link>
+                            </h3>
+                            <p className=" text-xs text-muted-foreground line-clamp-3">
+                              {rp.description}
+                            </p>
                           </div>
 
                           {/* Image */}
