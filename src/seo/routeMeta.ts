@@ -1,4 +1,5 @@
 import { SITE } from "./siteMeta";
+import { findPostBySlug } from "@/data/posts";
 
 export type RouteMeta = {
   title: string;
@@ -96,6 +97,17 @@ export function getMetaForPath(pathname: string): RouteMeta {
   // Blog posts: /blog/:slug
   if (pathname.startsWith("/blog/")) {
     const slug = pathname.replace("/blog/", "").trim();
+    const post = findPostBySlug(slug);
+
+    if (post) {
+      return {
+        title: `${post.title} | Blog - ${brandSuffix}`,
+        description: post.description,
+        canonicalPath: pathname,
+        ogType: "article",
+      };
+    }
+
     const pretty =
       slug
         .split("-")
