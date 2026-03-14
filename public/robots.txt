@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://delhuan-dairy.netlify.app/sitemap.xml
