@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Star, MapPin, Users } from 'lucide-react';
+import sonuimage from '@/assets/sonukrafigung.jpg';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const LoyalCustomers = () => {
@@ -25,9 +26,9 @@ const LoyalCustomers = () => {
       rating: 5
     },
     {
-      name: "Tajendra pandey",
+      name: "sonu kumar",
       gender: "Male", 
-      village: "Delhuan",
+      village: "Rafigunj",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
       years: "12+ Years",
       feedback: "Best dairy service in our area. Pure and fresh milk always.",
@@ -72,9 +73,9 @@ const LoyalCustomers = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-r from-secondary/20 to-accent/10">
+    <section data-animate="left" className="py-20 bg-gradient-to-r from-secondary/20 to-accent/10">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16 animate-fade-in" data-layout="left-text">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <Users className="h-8 w-8 text-accent" />
             <h2 className="text-4xl font-poppins font-bold text-primary">

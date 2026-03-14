@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import ContactForm from './ContactForm';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -22,17 +23,47 @@ const ContactSection = () => {
     });
   };
 
+  const isValidPhone = (phone: string) => {
+    const digits = phone.replace(/\D/g, '');
+    return digits.length === 10;
+  };
+
+  const isValidEmail = (email: string) => {
+    if (!email) return true; // optional field
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.name || !formData.phone || !formData.message) {
+      alert('Please fill all required fields (Name, Phone, Message).');
+      return;
+    }
+
+    if (!isValidPhone(formData.phone)) {
+      alert('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    if (!isValidEmail(formData.email)) {
+      alert('Please enter a valid email address.');
       return;
     }
 
     setLoading(true);
 
-    // Create WhatsApp message
+    // JSON payload for WhatsApp / email
+    const jsonPayload = JSON.stringify(formData, null, 2);
+
+    // Create WhatsApp message (JSON + readable text)
     const message = `📧 *Contact Form Submission*
+
+*JSON Data:*
+\`\`\`json
+${jsonPayload}
+\`\`\`
 
 👤 *Name:* ${formData.name}
 📱 *Phone:* ${formData.phone}
@@ -44,15 +75,24 @@ const ContactSection = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/917635065908?text=${encodedMessage}`;
 
-    // Simulate sending email data
-    console.log('Sending contact form to email:', {
-      to: 'manishkumar09112002@gmail.com',
-      subject: 'New Contact Form Submission',
-      data: formData
-    });
+    // Prepare email using mailto: so it opens in user's email client
+    const emailSubject = encodeURIComponent('New Contact Form Submission - Delhuan Dairy');
+    const emailBody = encodeURIComponent(
+      `You have a new enquiry from the website.
 
-    // Open WhatsApp
+JSON Data:
+${jsonPayload}
+
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email || 'Not provided'}
+Message: ${formData.message}`
+    );
+    const mailtoUrl = `mailto:manishkumar09112002@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+    // Open WhatsApp and email client
     window.open(whatsappUrl, '_blank');
+    window.open(mailtoUrl, '_self');
 
     // Reset form
     setFormData({ name: '', email: '', phone: '', message: '' });
@@ -75,7 +115,7 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: [ 'info@delhuandairy.com'],
+      details: ['info@delhuandairy.com'],
       color: 'primary'
     },
     {
@@ -87,9 +127,9 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-secondary/20">
+    <section id="contact" data-animate="right" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-layout="left-text">
           <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
             Get In Touch
           </h2>
@@ -101,7 +141,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
           {/* Contact Information with Hover Effects */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6" data-layout="left-text">
             <Card className="shadow-lg border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader className="premium-gradient text-white">
                 <CardTitle className="text-xl font-poppins">Contact Information</CardTitle>
@@ -163,11 +203,16 @@ const ContactSection = () => {
                 </div>
               </CardContent>
             </Card>
+            <div><h2 className="text-[20px] font-bold text-black bg-yellow-400 p-2">
+              Our Connection
+            </h2>
+
+            </div>
 
             {/* QR Code */}
             <div className='flex items-center justify-center rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300'>
               <a
-                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1970.7821920319245!2d83.99330449225273!3d25.264776949103762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d93dd6dd8bc41%3A0x6e9a1435ee05428d!2sSudha%20milk%20callection%20center!5e0!3m2!1sen!2sin!4v1754398175795!5m2!1sen!2sin"
+                href="https://adhunik-lakva-polio-hospital-gitana.vercel.app/"
                 style={{ cursor: "pointer", display: "block" }}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -181,92 +226,11 @@ const ContactSection = () => {
             </div>
           </div>
 
+
           {/* Contact Form and Map Section */}
-          <div className="lg:col-span-2 space-y-8">
-            <Card className="shadow-lg border-0 hover:shadow-xl transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl font-poppins text-primary">Send us a Message</CardTitle>
-                <p className="text-muted-foreground">
-                  Fill out the form below and we'll get back to you as soon as possible.
-                </p>
-              </CardHeader>
-              <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Enter your full name"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number *</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="Enter your phone number"
-                        required
-                      />
-                    </div>
-                  </div>
+          <div className="lg:col-span-2 space-y-8" data-layout="right-text">
+          <ContactForm />
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell us about your inquiry..."
-                      rows={6}
-                      required
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full premium-gradient text-white hover:opacity-90 transition-opacity duration-300"
-                    disabled={loading}
-                  >
-                    {loading ? (
-                      <span className="flex items-center justify-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Sending...
-                      </span>
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-5 w-5" />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
 
             {/* Map Section */}
             <Card className="shadow-lg border-0 hover:shadow-xl transition-all duration-300">
@@ -277,8 +241,9 @@ const ContactSection = () => {
                 </p>
               </CardHeader>
               <CardContent className="p-0 overflow-hidden rounded-b-lg">
+
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1970.7821920319245!2d83.99330449225273!3d25.264776949103762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d93dd6dd8bc41%3A0x6e9a1435ee05428d!2sSudha%20milk%20callection%20center!5e0!3m2!1sen!2sin!4v1754398175795!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d225.51230942594336!2d83.99255019828625!3d25.263959297749015!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d931570ef5ef3%3A0x42824ed7b27de539!2sdelhuan%20dairy%20farm%20milk%20collection!5e0!3m2!1sen!2sin!4v1764574298401!5m2!1sen!2sin"
                   width="100%"
                   height="450"
                   loading="lazy"

@@ -1,15 +1,17 @@
 import React from 'react';
 import { Facebook, Instagram, MessageCircle, Phone, Mail, MapPin, Milk, Award } from 'lucide-react';
 import logo from '@/assets/logo.png';
+import { Link } from 'react-router-dom';
+import './footer.css';
 
 const Footer = () => {
   const quickLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Products', href: '#products' },
-    { name: 'Milk Rate', href: '#milk-rate' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'About Us', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Products', href: '/products' },
+    { name: 'Milk Rate', href: '/milk-rate' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   const services = [
@@ -60,12 +62,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href} 
+                  <Link 
+                    to={link.href} 
                     className="text-sm opacity-90 hover:opacity-100 hover:text-accent transition-all duration-300"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -150,7 +152,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between text-sm opacity-80">
+            <div>
             <p>&copy; 2024 Delhuan Dairy & Animal Care. All rights reserved.</p>
+            <p className='copyright-text underline'>&copy; Designed and Developed by <a className='underline text-md  copyright-text' href="https://www.linkedin.com/in/manish-kumar0911/" target="_blank" rel="noopener noreferrer">Manish Kumar</a></p>
+            </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
