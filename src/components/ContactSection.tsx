@@ -204,15 +204,16 @@ Message: ${formData.message}`
               </CardContent>
             </Card>
             <div><h2 className="text-[20px] font-bold text-black bg-yellow-400 p-2">
-              Our Connection
+              Explore My delhuan village
             </h2>
+
 
             </div>
 
             {/* QR Code */}
             <div className='flex items-center justify-center rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300'>
               <a
-                href="https://adhunik-lakva-polio-hospital-gitana.vercel.app/"
+                href="https://delhuan-village-tour.vercel.app/"
                 style={{ cursor: "pointer", display: "block" }}
                 target="_blank"
                 rel="noopener noreferrer"
