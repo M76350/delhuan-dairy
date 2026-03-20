@@ -17,6 +17,9 @@ const ScrollReveal = () => {
   const initializedRef = useRef(false);
 
   useEffect(() => {
+    // Scroll to top instantly on every route change
+    window.scrollTo(0, 0);
+
     if (!initializedRef.current) {
       AOS.init({
         duration: 800,

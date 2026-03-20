@@ -20,6 +20,9 @@ import BlogPost from "./pages/BlogPost";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Disclaimer from "./pages/Disclaimer";
+import RefundPolicy from "./pages/RefundPolicy";
+import DeliveryPolicy from "./pages/DeliveryPolicy";
+import CartDrawer from "./components/CartDrawer";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +34,7 @@ const App = () => (
       <BrowserRouter>
         <SeoManager />
         <ScrollReveal />
+        <CartDrawer />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutPage />} />
@@ -44,9 +48,10 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/delivery-policy" element={<DeliveryPolicy />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<ProfilePage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

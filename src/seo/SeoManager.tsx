@@ -87,7 +87,38 @@ export default function SeoManager() {
       url: SITE.url,
       telephone: SITE.phoneE164,
       image: SITE.defaultOgImage,
-      sameAs: [],
+      logo: `${SITE.url}/logo.png`,
+      description:
+        "Delhuan Dairy Farm provides fresh cow & buffalo milk, dairy products, and animal care services near Kochas, Dinara Road, Rohtas, Bihar.",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Delhuan Village, Dinara Thana",
+        addressLocality: "Kochas",
+        addressRegion: "Bihar",
+        postalCode: "821307",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 24.8765,
+        longitude: 84.0123,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday",
+          ],
+          opens: "06:00",
+          closes: "20:00",
+        },
+      ],
+      priceRange: "₹₹",
+      servesCuisine: "Dairy Products",
+      sameAs: [
+        "https://www.facebook.com/delhuandairy",
+        "https://www.instagram.com/delhuandairy",
+      ],
     });
 
     // JSON-LD: WebSite + SearchAction (helps sitelinks/search in some engines)

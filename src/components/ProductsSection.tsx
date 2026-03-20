@@ -1,304 +1,294 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Star, Truck, Award } from 'lucide-react';
+import { ShoppingCart, Star, Truck, Award, Plus, Check, Leaf, Droplets } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-// import dairyProducts from '@/assets/dairy-products.jpg';
-import OrderPopup from '@/components/OrderPopup';
+import { useCart } from '@/context/CartContext';
+import { useToast } from '@/hooks/use-toast';
 
-const ProductsSection = () => {
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
-  const [isOrderPopupOpen, setIsOrderPopupOpen] = useState(false);
+interface Product {
+  id: string;
+  name: string;
+  nameHi: string;
+  price: string;
+  priceNum: number;
+  unit: string;
+  image: string;
+  badge?: string;
+  badgeColor?: string;
+  description: string;
+  rating: number;
+  reviews: number;
+  features: string[];
+}
 
-  const handleOrderClick = (product: any) => {
-    setSelectedProduct({
-      id: product.name.toLowerCase().replace(/\s+/g, '-'),
+const products: Product[] = [
+  {
+    id: 'fresh-milk-1l',
+    name: 'Fresh Cow Milk',
+    nameHi: 'ताज़ा गाय का दूध',
+    price: '₹60/litre',
+    priceNum: 60,
+    unit: 'litre',
+    image: '/logo.png',
+    badge: 'Best Seller',
+    badgeColor: 'bg-green-500',
+    description: 'Pure, fresh cow milk delivered daily from our farm. Rich in calcium and nutrients.',
+    rating: 5,
+    reviews: 248,
+    features: ['Daily Fresh', 'No Preservatives', 'Farm to Door'],
+  },
+  {
+    id: 'buffalo-milk-1l',
+    name: 'Buffalo Milk',
+    nameHi: 'भैंस का दूध',
+    price: '₹70/litre',
+    priceNum: 70,
+    unit: 'litre',
+    image: '/logo.png',
+    badge: 'High Fat',
+    badgeColor: 'bg-blue-500',
+    description: 'Thick, creamy buffalo milk — perfect for making paneer, khoya, and sweets.',
+    rating: 5,
+    reviews: 186,
+    features: ['High Fat Content', 'Ideal for Sweets', 'Pure & Natural'],
+  },
+  {
+    id: 'desi-ghee-500g',
+    name: 'Desi Ghee',
+    nameHi: 'देसी घी',
+    price: '₹650/500g',
+    priceNum: 650,
+    unit: '500g',
+    image: '/logo.png',
+    badge: 'Premium',
+    badgeColor: 'bg-yellow-500',
+    description: 'Hand-churned pure desi ghee made from cow milk. Traditional bilona method.',
+    rating: 5,
+    reviews: 312,
+    features: ['Bilona Method', 'A2 Cow Milk', 'Pure & Aromatic'],
+  },
+  {
+    id: 'paneer-250g',
+    name: 'Fresh Paneer',
+    nameHi: 'ताज़ा पनीर',
+    price: '₹120/250g',
+    priceNum: 120,
+    unit: '250g',
+    image: '/logo.png',
+    badge: 'Fresh Daily',
+    badgeColor: 'bg-orange-500',
+    description: 'Soft, fresh paneer made from pure milk. Perfect for curries and snacks.',
+    rating: 4,
+    reviews: 154,
+    features: ['Made Fresh Daily', 'Soft Texture', 'High Protein'],
+  },
+  {
+    id: 'curd-500g',
+    name: 'Natural Curd',
+    nameHi: 'दही',
+    price: '₹50/500g',
+    priceNum: 50,
+    unit: '500g',
+    image: '/logo.png',
+    description: 'Thick, creamy natural curd set from fresh milk. Great for digestion.',
+    rating: 4,
+    reviews: 98,
+    features: ['Probiotic Rich', 'Thick & Creamy', 'Natural Culture'],
+  },
+  {
+    id: 'lassi-250ml',
+    name: 'Sweet Lassi',
+    nameHi: 'मीठी लस्सी',
+    price: '₹30/250ml',
+    priceNum: 30,
+    unit: '250ml',
+    image: '/logo.png',
+    badge: 'New',
+    badgeColor: 'bg-purple-500',
+    description: 'Refreshing sweet lassi made from fresh curd. A traditional summer drink.',
+    rating: 4,
+    reviews: 67,
+    features: ['Refreshing', 'No Artificial Sugar', 'Traditional Recipe'],
+  },
+];
+
+const StarRating: React.FC<{ rating: number }> = ({ rating }) => (
+  <div className="flex gap-0.5">
+    {[1, 2, 3, 4, 5].map((s) => (
+      <Star
+        key={s}
+        className={`h-3.5 w-3.5 ${s <= rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`}
+      />
+    ))}
+  </div>
+);
+
+const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
+  const { addToCart, items } = useCart();
+  const { toast } = useToast();
+  const inCart = items.some((i) => i.id === product.id);
+
+  const handleAdd = () => {
+    addToCart({
+      id: product.id,
       name: product.name,
       price: product.price,
-      image: product.image
+      priceNum: product.priceNum,
+      image: product.image,
+      unit: product.unit,
     });
-    setIsOrderPopupOpen(true);
+    toast({
+      title: `${product.name} added!`,
+      description: 'Cart mein add ho gaya. Aur products dekh sakte hain.',
+    });
   };
 
-  const products = [
-    {
-      id: 'pure-cow-milk',
-      name: 'Pure Cow milk',
-      price: '₹50 / Liter',
-      originalPrice: '₹60 / Liter',
-      image: 'https://i.postimg.cc/7LKZ22cP/delhuan-dairy-cow-milk.png',
-      rating: 4.8,
-      reviews: 156,
-      features: ['100% Pure', 'Traditional Method', 'No Chemicals'],
-      bestseller: true,
-    },
-    {
-      id: 'pure-buffalo-Milk',
-      name: 'Pure Buffalo Milk',
-      price: '₹70 / Liter',
-      originalPrice: '₹80 / Liter',
-      image: 'https://i.postimg.cc/QMfdTTPh/delhuan-dairy-buffalo-milk.png',
-      rating: 4.8,
-      reviews: 156,
-      features: ['100% Pure', 'Traditional Method', 'No Chemicals'],
-      bestseller: true,
-    },
-    {
-      id: 'sudha-dana-cattle-feed',
-      name: 'sudha dana cattle feed',
-      price: '₹1350 / 50 kg',
-      originalPrice: '₹1400 / 50 kg',
-      image: 'https://i.postimg.cc/2SF6CJ7y/sudah_dana_daelhuan_dairy.png',
-      rating: 4.7,
-      reviews: 89,
-      features: ['High Nutrition', 'Quality Assured', 'Bulk Available'],
-      new: true,
-    },
-    {
-      id: 'cow ghee',
-      name: 'Premium cow ghee',
-      price: '₹320/500g',
-      originalPrice: '₹360/500g',
-      image: 'https://i.postimg.cc/nVwrsQ5M/Gemini-Generated-Image-i63dp1i63dp1i63d.png',
-      rating: 4.6,
-      reviews: 67,
-      features: ['Creamy', 'Unsalted', 'Fresh Daily'],
-    },
-    {
-      id: 'flavoured-curd',
-      name: 'Cultured Dahi (Curd)',
-      price: '₹70/500g',
-      originalPrice: '₹80',
-      image: 'https://i.postimg.cc/3x9xT42P/delhuandairy-curd-dahi-image.png',
-      rating: 4.7,
-      reviews: 112,
-      features: ['Thick Set', 'Probiotic Rich', 'Perfect for Meals'],
-      popular: true,
-    },
-    {
-      id: 'sudha-dana',
-      name: 'Sudha Dana (Cattle Feed)',
-      price: '₹45/kg',
-      originalPrice: '₹50',
-      image: 'https://i.postimg.cc/RZzh59KC/delhuandairyproduct.png',
-      rating: 4.9,
-      reviews: 234,
-      features: ['High Nutrition', 'Quality Assured', 'Bulk Available'],
-      popular: true,
-    },
-    {
-      id: 'calcium-powder',
-      name: 'Calcium & Mineral Mix',
-      price: '₹120/kg',
-      originalPrice: '₹140',
-      image: 'https://i.postimg.cc/4d3nL5t1/delhuan_dairy_farm.png',
-      rating: 4.8,
-      reviews: 45,
-      features: ['Veterinary Grade', 'Pure Calcium', 'Easy Dosage'],
-    },
-    {
-      id: 'fresh-milk',
-      name: 'Farm Fresh Milk',
-      price: '₹50/L',
-      originalPrice: '₹60/L',
-      image: 'https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      rating: 4.9,
-      reviews: 567,
-      features: ['Farm Fresh', 'Quality Tested', 'Home Delivery'],
-      bestseller: true,
-    },
-    {
-      id: 'lassi',
-      name: 'Sweet Lassi',
-      price: '₹35/500ml',
-      originalPrice: '₹40/500ml',
-      image: 'https://www.sudha.coop/wp-content/uploads/2020/11/MANGO-LASSI-200-ML-1.png',
-      rating: 4.5,
-      reviews: 62,
-      features: ['Chilled', 'Perfect for Summer', 'Made from Fresh Curd'],
-    },
-    {
-      id: 'khoa',
-      name: 'Traditional Khoa',
-      price: '₹360/kg',
-      originalPrice: '₹400',
-      image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinXDJ3gKijcwb7rIeRrYcNNYIw5q9sXfkiluL-lbnV1Nq5Oq9o7pucrBr1S0Mn9XUAkbvHbStLWW-7JSpgf6Y5bOF0r8SRw80SJKosyc8mTStg-WhU12FlAOv5TVVEbn_CR6BjTJcIxkdQ/s400/IMG_20170221_181830.jpg',
-      rating: 4.6,
-      reviews: 74,
-      features: ['Slow Cooked', 'Ideal for Sweets', 'Rich Taste'],
-    },
-  ];
-
   return (
-    <>
-      <style>
-        {`
-          @keyframes pulse-scale-x {
-            0%, 100% { transform: scaleX(1); }
-            50% { transform: scaleX(1.2); }
-          }
-          .animate-pulse-scale-x {
-            animation: pulse-scale-x 3s ease-in-out infinite;
-          }
-          @keyframes wobble {
-            0%, 100% { transform: translateX(0) translateY(0) rotate(0); }
-            25% { transform: translateX(2px) translateY(-2px) rotate(90deg); }
-            50% { transform: translateX(-2px) translateY(2px) rotate(-200deg); }
-            75% { transform: translateX(2px) translateY(2px) rotate(50deg); }
-          }
-          .animate-wobble {
-            animation: wobble 0.5s ease-in-out 2;
-          }
-        `}
-      </style>
-      <section id="products" data-animate="left" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16" data-layout="left-text">
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-4">
-              Premium Dairy Products
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Fresh, high-quality dairy products and cattle feed delivered right to your doorstep
-              with the guarantee of purity and excellence.
-            </p>
-          </div>
+    <Card className="group relative overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
+      {product.badge && (
+        <div className={`absolute top-3 left-3 z-10 ${product.badgeColor} text-white text-xs font-bold px-2 py-1 rounded-full`}>
+          {product.badge}
+        </div>
+      )}
+      {inCart && (
+        <div className="absolute top-3 right-3 z-10 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+          <Check className="h-3 w-3" /> In Cart
+        </div>
+      )}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-layout="right-text">
-            {products.map((product, index) => (
-              <Card key={index} className="group hover-lift border-0 shadow-lg overflow-hidden">
-                <div className="relative">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-48 object-cover object-center  group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                    {product.bestseller && (
-                      <Badge className="bg-accent text-accent-foreground">
-                        <Award className="w-3 h-3 mr-1" aria-hidden="true" />
-                        Bestseller
-                      </Badge>
-                    )}
-                    {product.new && (
-                      <Badge className="bg-primary text-primary-foreground">New</Badge>
-                    )}
-                    {product.popular && (
-                      <Badge variant="outline" className="bg-white">Popular</Badge>
-                    )}
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
-                    <div className="flex items-center space-x-1">
-                      <Star className="w-4 h-4 fill-accent text-accent" aria-hidden="true" />
-                      <span className="text-sm font-medium">{product.rating}</span>
-                    </div>
-                  </div>
-                </div>
+      {/* Product Image */}
+      <div className="relative h-44 bg-gradient-to-br from-primary/5 to-accent/10 overflow-hidden">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+        />
+      </div>
 
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-poppins font-semibold text-primary mb-2">
-                    {product.name}
-                  </h3>
-
-                  <div className="flex items-center space-x-2 mb-3">
-                    <span className="text-2xl font-bold text-accent-dark">{product.price}</span>
-                    <span className="text-sm text-muted-foreground line-through">{product.originalPrice}</span>
-                  </div>
-
-                  <div className="flex items-center space-x-1 text-sm text-muted-foreground mb-4">
-                    <Star className="w-4 h-4 fill-accent text-accent" aria-hidden="true" />
-                    <span>{product.rating}</span>
-                    <span>({product.reviews} reviews)</span>
-                  </div>
-
-                  <div className="space-y-2 mb-4">
-                    {product.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm">
-                        <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex space-x-2">
-                    <Button
-                      className="flex-1 premium-gradient text-white group"
-                      size="sm"
-                      onClick={() => handleOrderClick(product)}
-                    >
-                      <ShoppingCart
-                        className="w-4 h-4 mr-2 group-hover:animate-wobble"
-                        aria-hidden="true"
-                      />
-                      Order Now
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="px-3 group"
-                    >
-                      <Truck
-                        className="w-4 h-4 group-hover:animate-wobble"
-                        aria-hidden="true"
-                      />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Features Section */}
-          <div className="mt-16 grid md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-card rounded-lg shadow-sm group hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ">
-              <Truck
-                className="w-12 h-12 text-primary mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x"
-                aria-hidden="true"
-              />
-              <h4 className="font-semibold text-primary mb-2 group-hover:text-accent-dark transition-colors duration-300">
-                Free Delivery
-              </h4>
-              <p className="text-sm text-muted-foreground">On orders above ₹500</p>
-            </div>
-            <div className="text-center p-6 bg-card rounded-lg shadow-sm group hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ">
-              <Award
-                className="w-12 h-12 text-accent-dark mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x"
-                aria-hidden="true"
-              />
-              <h4 className="font-semibold text-primary mb-2 group-hover:text-accent-dark transition-colors duration-300">
-                Quality Assured
-              </h4>
-              <p className="text-sm text-muted-foreground">100% pure products</p>
-            </div>
-            <div className="text-center p-6 bg-card rounded-lg shadow-sm group hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ">
-              <Star
-                className="w-12 h-12 text-primary mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x"
-                aria-hidden="true"
-              />
-              <h4 className="font-semibold text-primary mb-2 group-hover:text-accent-dark transition-colors duration-300">
-                Customer Rated
-              </h4>
-              <p className="text-sm text-muted-foreground">4.8+ average rating</p>
-            </div>
-            <div className="text-center p-6 bg-card rounded-lg shadow-sm group hover:bg-accent/20 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ">
-              <ShoppingCart
-                className="w-12 h-12 text-accent-dark mx-auto mb-4 group-hover:animate-wobble animate-pulse-scale-x"
-                aria-hidden="true"
-              />
-              <h4 className="font-semibold text-primary mb-2 group-hover:text-accent-dark transition-colors duration-300">
-                Easy Ordering
-              </h4>
-              <p className="text-sm text-muted-foreground">Quick & simple process</p>
-            </div>
-          </div>
+      <CardContent className="p-4 space-y-3">
+        <div>
+          <h3 className="font-poppins font-bold text-base text-primary leading-tight">{product.name}</h3>
+          <p className="text-xs text-muted-foreground font-hindi">{product.nameHi}</p>
         </div>
 
-        <OrderPopup
-          isOpen={isOrderPopupOpen}
-          onClose={() => setIsOrderPopupOpen(false)}
-          product={selectedProduct}
-        />
-      </section>
-    </>
+        <div className="flex items-center gap-2">
+          <StarRating rating={product.rating} />
+          <span className="text-xs text-muted-foreground">({product.reviews})</span>
+        </div>
+
+        <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">{product.description}</p>
+
+        <div className="flex flex-wrap gap-1">
+          {product.features.map((f) => (
+            <span key={f} className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">
+              {f}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex items-center justify-between pt-1">
+          <div>
+            <span className="text-xl font-bold text-accent-dark">₹{product.priceNum}</span>
+            <span className="text-xs text-muted-foreground ml-1">/{product.unit}</span>
+          </div>
+          <Button
+            onClick={handleAdd}
+            size="sm"
+            className={`gap-1.5 transition-all duration-200 ${
+              inCart
+                ? 'bg-green-500 hover:bg-green-600 text-white'
+                : 'premium-gradient text-white hover:opacity-90'
+            }`}
+          >
+            {inCart ? (
+              <><Check className="h-4 w-4" /> Added</>
+            ) : (
+              <><Plus className="h-4 w-4" /> Add to Cart</>
+            )}
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+const ProductsSection: React.FC = () => {
+  const { totalItems, totalPrice, openCart } = useCart();
+
+  return (
+    <section id="products" className="py-16 bg-gradient-to-b from-background to-primary/5">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <Badge className="mb-3 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20">
+            <Leaf className="h-3 w-3 mr-1" /> 100% Pure & Natural
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-poppins font-bold text-primary mb-3">
+            Our Fresh Dairy Products
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
+            Delhuan Dairy ke taaze dairy products — seedha farm se aapke ghar tak. Kochas, Rohtas, Bihar mein
+            daily delivery available.
+          </p>
+        </div>
+
+        {/* Sticky Cart Bar */}
+        {totalItems > 0 && (
+          <div className="sticky top-16 z-40 mb-6">
+            <div className="bg-primary text-white rounded-xl px-5 py-3 flex items-center justify-between shadow-lg">
+              <div className="flex items-center gap-3">
+                <ShoppingCart className="h-5 w-5" />
+                <span className="font-semibold text-sm">
+                  {totalItems} item{totalItems > 1 ? 's' : ''} — ₹{totalPrice}
+                </span>
+                {totalPrice < 500 && (
+                  <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">
+                    ₹{500 - totalPrice} more for Free Delivery
+                  </span>
+                )}
+                {totalPrice >= 500 && (
+                  <span className="text-xs bg-green-400/30 px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <Truck className="h-3 w-3" /> Free Delivery!
+                  </span>
+                )}
+              </div>
+              <Button
+                onClick={openCart}
+                size="sm"
+                className="bg-white text-primary hover:bg-white/90 font-bold"
+              >
+                View Cart →
+              </Button>
+            </div>
+          </div>
+        )}
+
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+
+        {/* Trust Badges */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+          {[
+            { icon: <Truck className="h-6 w-6 text-primary" />, title: 'Free Delivery', desc: 'Orders above ₹500' },
+            { icon: <Droplets className="h-6 w-6 text-blue-500" />, title: '100% Pure', desc: 'No adulteration' },
+            { icon: <Award className="h-6 w-6 text-yellow-500" />, title: 'Quality Assured', desc: 'Sudha Plant certified' },
+            { icon: <Leaf className="h-6 w-6 text-green-500" />, title: 'Farm Fresh', desc: 'Daily from our farm' },
+          ].map((badge) => (
+            <div key={badge.title} className="flex flex-col items-center text-center p-4 bg-card rounded-xl border shadow-sm">
+              {badge.icon}
+              <p className="font-semibold text-sm mt-2 text-primary">{badge.title}</p>
+              <p className="text-xs text-muted-foreground">{badge.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

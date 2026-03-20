@@ -88,6 +88,20 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     canonicalPath: "/disclaimer",
     ogType: "website",
   },
+  "/refund-policy": {
+    title: `Refund Policy - ${brandSuffix}`,
+    description:
+      "Refund and cancellation policy for Delhuan Dairy Farm products and subscription plans.",
+    canonicalPath: "/refund-policy",
+    ogType: "website",
+  },
+  "/delivery-policy": {
+    title: `Delivery Policy - ${brandSuffix}`,
+    description:
+      "Delivery areas, schedule, and charges for Delhuan Dairy Farm in Kochas, Dinara, Rohtas (Bihar).",
+    canonicalPath: "/delivery-policy",
+    ogType: "website",
+  },
 };
 
 export function getMetaForPath(pathname: string): RouteMeta {
