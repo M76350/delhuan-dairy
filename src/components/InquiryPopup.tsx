@@ -13,7 +13,7 @@ const InquiryPopup = ({ isOpen, onClose }: InquiryPopupProps) => {
   const popupRef = useClickOutside({ isOpen, onClose });
 
   // ✅ Correct condition
-  if (isOpen) return null;
+  if (!isOpen) return null;
 
   return (
     <div
