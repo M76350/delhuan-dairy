@@ -263,14 +263,14 @@ Message: ${formData.message}`
           </h3>
           <div className="flex flex-col items-center sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+917635065908"
+              href="tel:+917635065908"target="_blank"
               className="premium-gradient text-white px-8 py-3 flex gap-2 rounded-md hover:opacity-90 transition-opacity duration-300 hover:-translate-y-0.5"
             >
               <Phone className="h-5 w-5" />
               Call Now:
             </a>
             <a
-              href="https://wa.me/917635065908"
+              href="https://wa.me/917635065908" target="_blank"
               className="accent-gradient text-black px-8 py-3 flex gap-2 rounded-md hover:opacity-90 transition-opacity duration-300 hover:-translate-y-0.5"
             >
               <MessageCircle className="h-5 w-5" />
