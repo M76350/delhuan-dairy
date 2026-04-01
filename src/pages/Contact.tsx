@@ -126,25 +126,6 @@ const ContactPage = () => (
       <AdComponent slot="XXXXXXXXXX" className="container mx-auto px-4" />
 
       {/* Map Embed Placeholder */}
-      <section className="py-8 bg-background">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
-            <iframe
-              title="Delhuan Dairy Farm Location — Kochas, Rohtas, Bihar"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.0!2d84.0123!3d24.8765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDUyJzM1LjQiTiA4NMKwMDAnNDQuMyJF!5e0!3m2!1sen!2sin!4v1234567890"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-3">
-            Delhuan Village, Dinara Thana, Rohtas, Bihar — Near Kochas
-          </p>
-        </div>
-      </section>
 
       <ContactSection />
     </main>
