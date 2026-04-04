@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+﻿
+
 import AdComponent from "@/components/AdComponent";
 
 const SITE_NAME = "Delhuan Dairy Farm";
@@ -9,7 +9,7 @@ const CONTACT_EMAIL = "delhuandairy@gmail.com";
 export default function Terms() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      
       <main className="container mx-auto px-4 pt-28 pb-16 max-w-3xl">
         <h1 className="text-3xl font-bold text-foreground">
           Terms &amp; Conditions
@@ -77,10 +77,10 @@ export default function Terms() {
                 Dinara, Rohtas district).
               </li>
               <li>
-                Delivery is typically done in the early morning (6 AM – 9 AM).
+                Delivery is typically done in the early morning (6 AM â€“ 9 AM).
               </li>
               <li>
-                Free delivery on orders above ₹500. Delivery charges may apply
+                Free delivery on orders above â‚¹500. Delivery charges may apply
                 for smaller orders.
               </li>
               <li>
@@ -101,7 +101,7 @@ export default function Terms() {
               </li>
               <li>
                 Refunds for unused subscription days will be processed within
-                5–7 business days to the original payment method.
+                5â€“7 business days to the original payment method.
               </li>
               <li>
                 No refunds for products already delivered unless there is a
@@ -119,8 +119,8 @@ export default function Terms() {
               6. Intellectual Property
             </h2>
             <p>
-              All content on this website — including text, images, logos, and
-              blog articles — is the property of {SITE_NAME} and may not be
+              All content on this website â€” including text, images, logos, and
+              blog articles â€” is the property of {SITE_NAME} and may not be
               reproduced without written permission.
             </p>
           </section>
@@ -156,7 +156,7 @@ export default function Terms() {
               <p>
                 <strong>{SITE_NAME}</strong>
               </p>
-              <p>Delhuan Village, Dinara Thana, Rohtas, Bihar – 821307</p>
+              <p>Delhuan Village, Dinara Thana, Rohtas, Bihar â€“ 821307</p>
               <p>
                 Phone:{" "}
                 <a href={`tel:${PHONE}`} className="text-primary underline">
@@ -176,7 +176,7 @@ export default function Terms() {
           </section>
         </div>
       </main>
-      <Footer />
+      
     </div>
   );
 }

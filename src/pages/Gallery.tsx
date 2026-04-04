@@ -1,9 +1,9 @@
-import React from "react";
-import Header from "@/components/Header";
+﻿import React from "react";
+
 import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
-import ScrollToTop from "@/components/ScrollToTop";
+
+
+
 import GallerySection from "@/components/GallerySection";
 import CustomerTestimonials from "@/components/CustomerTestimonials";
 import AdComponent from "@/components/AdComponent";
@@ -19,7 +19,7 @@ const galleryStats = [
 
 const GalleryPage = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
-    <Header />
+    
     <main>
       <HeroSection
         id="gallery-hero"
@@ -65,9 +65,9 @@ const GalleryPage = () => (
       <GallerySection />
       <CustomerTestimonials />
     </main>
-    <Footer />
-    <ScrollToTop />
-    <FloatingButtons />
+    
+    
+    
   </div>
 );
 

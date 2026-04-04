@@ -1,9 +1,9 @@
-import React from "react";
-import Header from "@/components/Header";
+﻿import React from "react";
+
 import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
-import ScrollToTop from "@/components/ScrollToTop";
+
+
+
 import ServicesSection from "@/components/ServicesSection";
 import AnimalMedicalSection from "@/components/AnimalMedicalSection";
 import CustomerTestimonials from "@/components/CustomerTestimonials";
@@ -46,14 +46,14 @@ const services = [
   {
     icon: Phone,
     title: "24/7 WhatsApp Support",
-    desc: "Order products, report animal emergencies, check milk rates, or get delivery updates — all via WhatsApp at +91-7635065908.",
+    desc: "Order products, report animal emergencies, check milk rates, or get delivery updates â€” all via WhatsApp at +91-7635065908.",
     tag: "Support",
   },
 ];
 
 const ServicesPage = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
-    <Header />
+    
     <main>
       <HeroSection
         id="services-hero"
@@ -86,7 +86,7 @@ const ServicesPage = () => (
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
                 Whether you are a farmer in Delhuan, a household in Kochas, or a business in Dinara,
                 our services guarantee quality, transparency, and speed. From doorstep milk collection
-                to veterinary support and premium dairy supply — we cover it all.
+                to veterinary support and premium dairy supply â€” we cover it all.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Connected to Sudha Plant Kochas (Head Center Ara, Bihar), we follow strict quality
@@ -122,7 +122,7 @@ const ServicesPage = () => (
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">All Services at a Glance</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              From milk collection to animal healthcare — everything under one roof at Delhuan Dairy Farm.
+              From milk collection to animal healthcare â€” everything under one roof at Delhuan Dairy Farm.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -144,9 +144,9 @@ const ServicesPage = () => (
       <AnimalMedicalSection />
       <CustomerTestimonials />
     </main>
-    <Footer />
-    <ScrollToTop />
-    <FloatingButtons />
+    
+    
+    
   </div>
 );
 

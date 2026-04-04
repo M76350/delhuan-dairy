@@ -1,19 +1,19 @@
-import React from "react";
-import Header from "@/components/Header";
+﻿import React from "react";
+
 import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
-import ScrollToTop from "@/components/ScrollToTop";
+
+
+
 import MilkRateSection from "@/components/MilkRateSection";
 import AdComponent from "@/components/AdComponent";
 import heroImage2 from "@/assets/hero-dairy-2.jpg";
 import { TrendingUp, ShieldCheck, Zap, BarChart3 } from "lucide-react";
 
 const rateTable = [
-  { type: "Cow Milk (Standard)", fat: "3.5%", snf: "8.5%", rate: "₹50/Litre" },
-  { type: "Cow Milk (Premium)", fat: "4.0%+", snf: "9.0%+", rate: "₹55/Litre" },
-  { type: "Buffalo Milk (Standard)", fat: "6.0%", snf: "9.0%", rate: "₹70/Litre" },
-  { type: "Buffalo Milk (Premium)", fat: "7.0%+", snf: "9.5%+", rate: "₹75/Litre" },
+  { type: "Cow Milk (Standard)", fat: "3.5%", snf: "8.5%", rate: "â‚¹50/Litre" },
+  { type: "Cow Milk (Premium)", fat: "4.0%+", snf: "9.0%+", rate: "â‚¹55/Litre" },
+  { type: "Buffalo Milk (Standard)", fat: "6.0%", snf: "9.0%", rate: "â‚¹70/Litre" },
+  { type: "Buffalo Milk (Premium)", fat: "7.0%+", snf: "9.5%+", rate: "â‚¹75/Litre" },
 ];
 
 const pillars = [
@@ -25,7 +25,7 @@ const pillars = [
   {
     icon: BarChart3,
     title: "Lab-Grade Testing",
-    desc: "FAT/SNF tracking plus temperature-controlled storage at source — every batch tested.",
+    desc: "FAT/SNF tracking plus temperature-controlled storage at source â€” every batch tested.",
   },
   {
     icon: Zap,
@@ -41,14 +41,14 @@ const pillars = [
 
 const MilkRatePage = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
-    <Header />
+    
     <main>
       <HeroSection
         id="milk-rate-hero"
         slides={[
           {
             image: heroImage2,
-            title: "Today's Milk Rate — Kochas, Rohtas",
+            title: "Today's Milk Rate â€” Kochas, Rohtas",
             subtitle: "Updated daily with Sudha guidelines and local demand",
           },
         ]}
@@ -119,9 +119,9 @@ const MilkRatePage = () => (
 
       <MilkRateSection />
     </main>
-    <Footer />
-    <ScrollToTop />
-    <FloatingButtons />
+    
+    
+    
   </div>
 );
 

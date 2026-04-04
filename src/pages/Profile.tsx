@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { ArrowLeft } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
-import ScrollToTop from "@/components/ScrollToTop";
+
+
+
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -57,7 +57,7 @@ const ProfilePage = () => {
 
   return (
     <div className="min-h-screen bg-background  overflow-x-hidden">
-      <Header />
+      
       <main className="pt-28 pb-16 bg-secondary/20">
         <div className="max-w-3xl mx-auto px-4">
           <Button
@@ -155,9 +155,9 @@ const ProfilePage = () => {
           </Card>
         </div>
       </main>
-      <Footer />
-      <ScrollToTop />
-      <FloatingButtons />
+      
+      
+      
     </div>
   );
 };

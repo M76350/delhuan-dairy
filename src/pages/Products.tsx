@@ -1,9 +1,9 @@
-import React from "react";
-import Header from "@/components/Header";
+﻿import React from "react";
+
 import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
-import ScrollToTop from "@/components/ScrollToTop";
+
+
+
 import ProductsSection from "@/components/ProductsSection";
 import MilkRateSection from "@/components/MilkRateSection";
 import SubscriptionCard from "@/components/SubscriptionCard";
@@ -29,13 +29,13 @@ const highlights = [
   {
     icon: ShoppingCart,
     title: "Easy Ordering",
-    desc: "Add to cart on website or order directly via WhatsApp — quick and simple.",
+    desc: "Add to cart on website or order directly via WhatsApp â€” quick and simple.",
   },
 ];
 
 const ProductsPage = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
-    <Header />
+    
     <main>
       <HeroSection
         id="products-hero"
@@ -43,7 +43,7 @@ const ProductsPage = () => (
           {
             image: 'https://i.postimg.cc/2SF6CJ7y/sudah_dana_daelhuan_dairy.png',
             title: "Fresh Dairy Products in Kochas, Rohtas",
-            subtitle: "Cow milk, buffalo milk, ghee, curd & cattle feed — order online",
+            subtitle: "Cow milk, buffalo milk, ghee, curd & cattle feed â€” order online",
           },
         ]}
         eyebrow="Our Products"
@@ -63,11 +63,11 @@ const ProductsPage = () => (
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
                 We process every order with hygienic infrastructure, rapid chilling, and strict
                 quality checks so your kitchen, shop, or business receives consistent taste and
-                nutrition. From pure cow milk to premium ghee and cattle feed — all available online.
+                nutrition. From pure cow milk to premium ghee and cattle feed â€” all available online.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Add products to your cart, choose quantity, and place your order via WhatsApp in
-                seconds. Free delivery on orders above ₹500 in Kochas, Dinara, and Delhuan area.
+                seconds. Free delivery on orders above â‚¹500 in Kochas, Dinara, and Delhuan area.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -92,9 +92,9 @@ const ProductsPage = () => (
       <SubscriptionCard />
       <MilkRateSection />
     </main>
-    <Footer />
-    <ScrollToTop />
-    <FloatingButtons />
+    
+    
+    
   </div>
 );
 

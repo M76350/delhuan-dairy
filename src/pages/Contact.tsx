@@ -1,9 +1,9 @@
-import React from "react";
-import Header from "@/components/Header";
+﻿import React from "react";
+
 import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
-import ScrollToTop from "@/components/ScrollToTop";
+
+
+
 import ContactSection from "@/components/ContactSection";
 import AdComponent from "@/components/AdComponent";
 import heroImage3 from "@/assets/hero-dairy-3.jpg";
@@ -13,7 +13,7 @@ const contactChannels = [
   {
     icon: MapPin,
     title: "Visit Our Dairy Center",
-    detail: "Delhuan Village, Dinara Thana, Rohtas, Bihar – 821307",
+    detail: "Delhuan Village, Dinara Thana, Rohtas, Bihar â€“ 821307",
     cta: "Near Kochas, Dinara Road",
     color: "bg-blue-50 border-blue-200",
     iconColor: "text-blue-600",
@@ -22,7 +22,7 @@ const contactChannels = [
     icon: Phone,
     title: "Call & WhatsApp",
     detail: "+91-7635065908",
-    cta: "Available 6 AM – 8 PM, 7 days",
+    cta: "Available 6 AM â€“ 8 PM, 7 days",
     color: "bg-green-50 border-green-200",
     iconColor: "text-green-600",
     link: "tel:+917635065908",
@@ -49,7 +49,7 @@ const contactChannels = [
   {
     icon: Clock,
     title: "Working Hours",
-    detail: "Monday – Sunday",
+    detail: "Monday â€“ Sunday",
     cta: "6:00 AM to 8:00 PM",
     color: "bg-amber-50 border-amber-200",
     iconColor: "text-amber-600",
@@ -58,7 +58,7 @@ const contactChannels = [
     icon: Truck,
     title: "Delivery Areas",
     detail: "Kochas, Dinara, Delhuan & nearby",
-    cta: "Free delivery above ₹500",
+    cta: "Free delivery above â‚¹500",
     color: "bg-rose-50 border-rose-200",
     iconColor: "text-rose-600",
   },
@@ -66,7 +66,7 @@ const contactChannels = [
 
 const ContactPage = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
-    <Header />
+    
     <main>
       <HeroSection
         id="contact-hero"
@@ -88,7 +88,7 @@ const ContactPage = () => (
           <div className="text-center mb-10">
             <p className="text-xs uppercase tracking-[0.6em] text-primary mb-3 font-semibold">Get in Touch</p>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Let's Connect — Delhuan Dairy Farm
+              Let's Connect â€” Delhuan Dairy Farm
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Reach out for wholesale milk supply, animal care, collection-center support, or
@@ -129,9 +129,9 @@ const ContactPage = () => (
 
       <ContactSection />
     </main>
-    <Footer />
-    <ScrollToTop />
-    <FloatingButtons />
+    
+    
+    
   </div>
 );
 

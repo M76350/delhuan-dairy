@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+﻿
+
 import { Link } from "react-router-dom";
 import { posts } from "@/data/posts";
 import { useState, useMemo } from "react";
@@ -24,7 +24,7 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      
       <main className="container mx-auto px-4 pt-28 pb-16">
         <section className="max-w-3xl">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -90,7 +90,7 @@ export default function Blog() {
                       to={`/blog/${p.slug}`}
                       className="text-sm font-medium text-primary hover:underline"
                     >
-                      Read full story →
+                      Read full story â†’
                     </Link>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export default function Blog() {
           )}
         </section>
       </main>
-      <Footer />
+      
     </div>
   );
 }

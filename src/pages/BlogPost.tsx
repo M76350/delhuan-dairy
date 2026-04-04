@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+﻿
+
 import { Link, useParams } from "react-router-dom";
 import {
   findPostBySlug,
@@ -15,7 +15,7 @@ export default function BlogPost() {
 
   return (
     <div className=" bg-background">
-      <Header />
+      
 
       <main className="container mx-auto px-4 pt-28 pb-16">
         <div className="max-w-7xl mx-auto">
@@ -40,7 +40,7 @@ export default function BlogPost() {
                   hover:bg-gradient-to-r hover:from-primary hover:to-purple-500
                   hover:shadow-md"
                 >
-                  ← Previous
+                  â† Previous
                 </Link>
               )}
 
@@ -53,7 +53,7 @@ export default function BlogPost() {
                   hover:bg-gradient-to-r hover:from-primary hover:to-purple-500
                   hover:shadow-md"
                 >
-                  Next →
+                  Next â†’
                 </Link>
               )}
             </div>
@@ -189,7 +189,7 @@ export default function BlogPost() {
         </div>
       </main>
 
-      <Footer />
+      
     </div>
   );
 }
