@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+﻿
+
 import AdComponent from "@/components/AdComponent";
 
 const SITE_NAME = "Delhuan Dairy Farm";
@@ -8,7 +8,7 @@ const PHONE = "+91-7635065908";
 export default function DeliveryPolicy() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      
       <main className="container mx-auto px-4 pt-28 pb-16 max-w-3xl">
         <h1 className="text-3xl font-bold text-foreground">Delivery Policy</h1>
         <p className="text-muted-foreground mt-2 text-sm">
@@ -44,16 +44,16 @@ export default function DeliveryPolicy() {
             </h2>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Daily Milk Delivery:</strong> 6:00 AM – 9:00 AM, 7
+                <strong>Daily Milk Delivery:</strong> 6:00 AM â€“ 9:00 AM, 7
                 days a week including Sundays and public holidays.
               </li>
               <li>
                 <strong>Other Products (Ghee, Curd, Khoa):</strong> Delivered
-                within 24–48 hours of order confirmation.
+                within 24â€“48 hours of order confirmation.
               </li>
               <li>
                 <strong>Cattle Feed (Sudha Dana):</strong> Delivered within
-                2–3 business days for bulk orders.
+                2â€“3 business days for bulk orders.
               </li>
             </ul>
           </section>
@@ -64,10 +64,10 @@ export default function DeliveryPolicy() {
             </h2>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Free delivery</strong> on orders above ₹500.
+                <strong>Free delivery</strong> on orders above â‚¹500.
               </li>
               <li>
-                Orders below ₹500: ₹20 delivery charge applies.
+                Orders below â‚¹500: â‚¹20 delivery charge applies.
               </li>
               <li>
                 Subscription plan customers get free delivery regardless of
@@ -118,12 +118,12 @@ export default function DeliveryPolicy() {
                   {PHONE}
                 </a>
               </p>
-              <p>Available: 6 AM – 8 PM, 7 days a week</p>
+              <p>Available: 6 AM â€“ 8 PM, 7 days a week</p>
             </address>
           </section>
         </div>
       </main>
-      <Footer />
+      
     </div>
   );
 }

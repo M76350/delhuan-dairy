@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+﻿
+
 import AdComponent from "@/components/AdComponent";
 
 const SITE_NAME = "Delhuan Dairy Farm";
@@ -8,7 +8,7 @@ const PHONE = "+91-7635065908";
 export default function RefundPolicy() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      
       <main className="container mx-auto px-4 pt-28 pb-16 max-w-3xl">
         <h1 className="text-3xl font-bold text-foreground">Refund Policy</h1>
         <p className="text-muted-foreground mt-2 text-sm">
@@ -89,7 +89,7 @@ export default function RefundPolicy() {
               </li>
               <li>
                 Approved refunds are processed within{" "}
-                <strong>5–7 business days</strong> to the original payment
+                <strong>5â€“7 business days</strong> to the original payment
                 method (Razorpay/UPI/bank account).
               </li>
             </ol>
@@ -101,12 +101,12 @@ export default function RefundPolicy() {
             </h2>
             <address className="not-italic space-y-1 text-sm">
               <p>WhatsApp / Phone: <a href={`tel:${PHONE}`} className="text-primary underline">{PHONE}</a></p>
-              <p>Available: Monday – Sunday, 6 AM – 8 PM</p>
+              <p>Available: Monday â€“ Sunday, 6 AM â€“ 8 PM</p>
             </address>
           </section>
         </div>
       </main>
-      <Footer />
+      
     </div>
   );
 }

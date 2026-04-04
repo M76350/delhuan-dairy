@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+﻿
+
 import AdComponent from "@/components/AdComponent";
 
 const SITE_NAME = "Delhuan Dairy Farm";
@@ -8,7 +8,7 @@ const PHONE = "+91-7635065908";
 export default function Disclaimer() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      
       <main className="container mx-auto px-4 pt-28 pb-16 max-w-3xl">
         <h1 className="text-3xl font-bold text-foreground">Disclaimer</h1>
         <p className="text-muted-foreground mt-2 text-sm">
@@ -98,7 +98,7 @@ export default function Disclaimer() {
           </section>
         </div>
       </main>
-      <Footer />
+      
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+﻿
+
 import AdComponent from "@/components/AdComponent";
 
 const SITE_NAME = "Delhuan Dairy Farm";
@@ -10,7 +10,7 @@ const PHONE = "+91-7635065908";
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      
       <main className="container mx-auto px-4 pt-28 pb-16 max-w-3xl">
         <h1 className="text-3xl font-bold text-foreground">Privacy Policy</h1>
         <p className="text-muted-foreground mt-2 text-sm">
@@ -174,7 +174,7 @@ export default function PrivacyPolicy() {
               <p>
                 <strong>{SITE_NAME}</strong>
               </p>
-              <p>Delhuan Village, Dinara Thana, Rohtas, Bihar – 821307</p>
+              <p>Delhuan Village, Dinara Thana, Rohtas, Bihar â€“ 821307</p>
               <p>
                 Phone/WhatsApp:{" "}
                 <a href={`tel:${PHONE}`} className="text-primary underline">
@@ -194,7 +194,7 @@ export default function PrivacyPolicy() {
           </section>
         </div>
       </main>
-      <Footer />
+      
     </div>
   );
 }

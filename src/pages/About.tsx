@@ -1,9 +1,9 @@
-import React from "react";
-import Header from "@/components/Header";
+﻿import React from "react";
+
 import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
-import ScrollToTop from "@/components/ScrollToTop";
+
+
+
 import AboutSection from "@/components/AboutSection";
 import LeadershipTeam from "@/components/LeadershipTeam";
 import CustomerTestimonials from "@/components/CustomerTestimonials";
@@ -44,7 +44,7 @@ const values = [
 
 const AboutPage = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
-    <Header />
+    
     <main>
       <HeroSection
         id="about-hero"
@@ -89,19 +89,19 @@ const AboutPage = () => (
               </p>
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li className="flex items-start gap-2">
-                  <span className="text-primary font-bold mt-0.5">✓</span>
+                  <span className="text-primary font-bold mt-0.5">âœ“</span>
                   Farmer success programs and fair pricing initiatives
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary font-bold mt-0.5">✓</span>
+                  <span className="text-primary font-bold mt-0.5">âœ“</span>
                   Field veterinarians, feed partners, and doorstep logistics
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary font-bold mt-0.5">✓</span>
+                  <span className="text-primary font-bold mt-0.5">âœ“</span>
                   Digital tracking for quality, temperature, and payouts
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary font-bold mt-0.5">✓</span>
+                  <span className="text-primary font-bold mt-0.5">âœ“</span>
                   Serving Delhuan, Kochas, Dinara, and 40+ villages in Rohtas
                 </li>
               </ul>
@@ -150,9 +150,9 @@ const AboutPage = () => (
       <LeadershipTeam />
       <CustomerTestimonials />
     </main>
-    <Footer />
-    <ScrollToTop />
-    <FloatingButtons />
+    
+    
+    
   </div>
 );
 
